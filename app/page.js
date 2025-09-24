@@ -32,6 +32,13 @@ export default function Portfolio() {
       borderColor: "#10B981",
       gradient: "linear-gradient(180deg, #2563EB, #000)",
       url: "https://tictactoe-tau-rose.vercel.app"
+    },
+    {
+      image: "p5.png",
+      title: "Cars Vault",
+      borderColor: "#10B981",
+      gradient: "linear-gradient(180deg, #F59E0B, #000)",
+      url: "https://carsvault.vercel.app/"
     }
   ];
 
