@@ -5,6 +5,21 @@ import ChromaGrid from "./components/ChromaGrid"
 export default function Portfolio() {
 
   const items = [
+
+{
+      image: "p6.png",
+      title: "Instagram Clone",
+      borderColor: "#10B981",
+      gradient: "linear-gradient(180deg, #F59E0B, #000)",
+      url: "https://minegram-tawny.vercel.app/"
+    },
+    {
+      image: "p5.png",
+      title: "Cars Vault",
+      borderColor: "#10B981",
+      gradient: "linear-gradient(180deg, #F59E0B, #000)",
+      url: "https://carsvault.vercel.app/"
+    },
     {
       image: "p1.png",
       title: "Pak Tourism",
@@ -32,14 +47,8 @@ export default function Portfolio() {
       borderColor: "#10B981",
       gradient: "linear-gradient(180deg, #2563EB, #000)",
       url: "https://tictactoe-tau-rose.vercel.app"
-    },
-    {
-      image: "p5.png",
-      title: "Cars Vault",
-      borderColor: "#10B981",
-      gradient: "linear-gradient(180deg, #F59E0B, #000)",
-      url: "https://carsvault.vercel.app/"
     }
+    
   ];
 
   return (
@@ -85,7 +94,7 @@ export default function Portfolio() {
         <div style={{ height: '600px', position: 'relative' , background:'white'}}>
           <ChromaGrid
             items={items}
-            radius={300}
+            radius={600}
             damping={0.45}
             fadeOut={0.6}
             ease="power3.out"
