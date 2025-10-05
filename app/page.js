@@ -19,7 +19,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 text-gray-200">
       <section
-        className="h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12 lg:px-24 relative text-white"
+        className="h-[130vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12 lg:px-24 relative text-white"
         style={{
           backgroundImage: "url('/me.png')",
           backgroundSize: "cover",
@@ -27,12 +27,9 @@ export default function Portfolio() {
           backgroundRepeat: "no-repeat"
         }}
       >
-        <div className="absolute inset-0 bg-black/60"></div> {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
 
-        {/* NEW: Content Wrapper for Parallel Layout (Flex or Grid) */}
         <div className="relative z-10 w-full max-w-7xl h-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-
-          {/* LEFT COLUMN: Text Content */}
           <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left md:w-1/2 p-4">
             <motion.h1
               initial={{ opacity: 0, y: -30 }}
@@ -77,18 +74,12 @@ export default function Portfolio() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Visual Separator/Empty Space (Takes the place of the visible image) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="hidden md:block md:w-1/2 h-full min-h-[300px]"
           >
-            {/* This column is empty but takes up space, making the image 
-        (which is the background of the main section) appear to be to the right of the text.
-        You can uncomment the border or add an animation here if you want a subtle effect.
-      */}
-            {/* <div className="w-full h-full bg-transparent border-4 border-indigo-500 rounded-xl"></div> */}
           </motion.div>
 
         </div>
