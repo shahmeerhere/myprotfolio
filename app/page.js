@@ -19,7 +19,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 text-gray-200">
       <section
-        className="h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12 lg:px-24 relative"
+        className="h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12 lg:px-24 relative text-white"
         style={{
           backgroundImage: "url('/me.png')",
           backgroundSize: "cover",
@@ -29,46 +29,68 @@ export default function Portfolio() {
       >
         <div className="absolute inset-0 bg-black/60"></div> {/* Dark overlay */}
 
-        <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 relative z-10"
-        >
-          Hey, I’m <span className="bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">Shahmeer</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-xl md:max-w-2xl lg:max-w-3xl mb-6 text-gray-200 relative z-10 leading-relaxed"
-        >
-          Passionate about <span className="text-indigo-400">Web Development</span> & <span className="text-pink-400">Cybersecurity</span>.
-          Building sleek apps and breaking them (ethically) to make them stronger.
-        </motion.p>
+        {/* NEW: Content Wrapper for Parallel Layout (Flex or Grid) */}
+        <div className="relative z-10 w-full max-w-7xl h-full flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
 
-        <div className="flex flex-wrap justify-center gap-4 mt-6 relative z-10">
-          <motion.button
-            onClick={() => setMode("dev")}
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.95 }}
-            className={`w-40 sm:w-44 md:w-48 px-5 py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2 ${mode === "dev"
-              ? "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white"
-              : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`}
-          >
-            <FaLaptopCode /> Developer
-          </motion.button>
+          {/* LEFT COLUMN: Text Content */}
+          <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left md:w-1/2 p-4">
+            <motion.h1
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4"
+            >
+              Hey, I’m <span className="bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">Shahmeer</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-xl mb-6 text-gray-200 leading-relaxed"
+            >
+              Passionate about <span className="text-indigo-400">Web Development</span> & <span className="text-pink-400">Cybersecurity</span>.
+              Building sleek apps and breaking them (ethically) to make them stronger.
+            </motion.p>
 
-          <motion.button
-            onClick={() => setMode("cyber")}
-            whileHover={{ scale: 1.08 }}
-            whileTap={{ scale: 0.95 }}
-            className={`w-40 sm:w-44 md:w-48 px-5 py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2 ${mode === "cyber"
-              ? "bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500 text-white"
-              : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`}
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-6">
+              <motion.button
+                onClick={() => setMode("dev")}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                className={`w-40 sm:w-44 md:w-48 px-5 py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2 ${mode === "dev"
+                  ? "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white"
+                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`}
+              >
+                <FaLaptopCode /> Developer
+              </motion.button>
+
+              <motion.button
+                onClick={() => setMode("cyber")}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                className={`w-40 sm:w-44 md:w-48 px-5 py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2 ${mode === "cyber"
+                  ? "bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500 text-white"
+                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"}`}
+              >
+                <FaShieldAlt /> Cybersecurity
+              </motion.button>
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN: Visual Separator/Empty Space (Takes the place of the visible image) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="hidden md:block md:w-1/2 h-full min-h-[300px]"
           >
-            <FaShieldAlt /> Cybersecurity
-          </motion.button>
+            {/* This column is empty but takes up space, making the image 
+        (which is the background of the main section) appear to be to the right of the text.
+        You can uncomment the border or add an animation here if you want a subtle effect.
+      */}
+            {/* <div className="w-full h-full bg-transparent border-4 border-indigo-500 rounded-xl"></div> */}
+          </motion.div>
+
         </div>
       </section>
 
