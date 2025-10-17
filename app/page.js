@@ -13,7 +13,7 @@ export default function Portfolio() {
     { image: "/p1.png", title: "Pak Tourism", description: "Explore beautiful destinations across Pakistan.", url: "https://paktourism.vercel.app/" },
     { image: "/p2.png", title: "Timetable Generator", description: "Smart timetable generator for students.", url: "https://timetablegenerator-iota.vercel.app" },
     { image: "/p3.png", title: "Weather App", description: "Real-time weather tracking app powered by OpenWeather API.", url: "https://weatherapp-nine-blond.vercel.app" },
-    { image: "/p7.png", title: "iTo-DO", description: "A simple React.js app to manage daily tasks with add, complete, and delete features.", url: "https://todolist-eight-tau-49.vercel.app/" },
+    { image: "/p6.png", title: "iTask", description: "A simple React.js app to manage daily tasks with add, complete, and delete features.", url: "https://todolist-eight-tau-49.vercel.app/" },
     { image: "/p4.png", title: "Tic Tac Toe", description: "Fun, responsive multiplayer Tic Tac Toe game.", url: "https://tictactoe-tau-rose.vercel.app" }
   ]
 
