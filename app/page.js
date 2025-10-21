@@ -1,129 +1,143 @@
-"use client"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { FaLaptopCode, FaServer, FaDatabase, FaEnvelope } from "react-icons/fa"
+// This file serves as the main page (root route '/') of your Next.js application.
 
-export default function Portfolio() {
-  const items = [
-    { image: "/p6.png", title: "Instagram Clone", description: "Full-stack clone with auth, posts, responsive UI.", url: "https://minegram-tawny.vercel.app/" },
-    { image: "/p9.png", title: "Food Genie", description: "AI powered food app with database and responsive UI.", url: "https://foodgenie-lg9n.vercel.app/" },
-    { image: "/p7.png", title: "Morva", description: "Scalable E-Commerce Shoe Store with seamless UX", url: "https://shoestore-9yb9.vercel.app/" },
-    { image: "/p8.png", title: "Just Me", description: "Access your personal vault anytime, anywhere.", url: "https://justme-ashy.vercel.app/" },
-    { image: "/p5.png", title: "Cars Vault", description: "Elegant car showroom app with modern design.", url: "https://carsvault.vercel.app/" },
-    { image: "/p1.png", title: "Pak Tourism", description: "Explore beautiful destinations across Pakistan.", url: "https://paktourism.vercel.app/" },
-    { image: "/p2.png", title: "Timetable Generator", description: "Smart timetable generator for students.", url: "https://timetablegenerator-iota.vercel.app" },
-    { image: "/p3.png", title: "Weather App", description: "Real-time weather tracking app powered by OpenWeather API.", url: "https://weatherapp-nine-blond.vercel.app" },
-    { image: "/p6.png", title: "iTask", description: "A simple React.js app to manage daily tasks.", url: "https://todolist-eight-tau-49.vercel.app/" },
-    { image: "/p4.png", title: "Tic Tac Toe", description: "Fun, responsive multiplayer Tic Tac Toe game.", url: "https://tictactoe-tau-rose.vercel.app" }
-  ]
-
+const HomePage = () => {
   return (
-    <div className="min-h-screen bg-[#080808] text-gray-200">
-      
-      {/* HERO SECTION */}
-      <section className="h-screen flex items-center justify-center text-center px-6 relative">
-        {/* Animated gradient overlay */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.4 }}
-          transition={{ duration: 1.5 }}
-          className="absolute inset-0 bg-gradient-to-tr from-indigo-600/40 via-purple-600/40 to-pink-600/40"
-        />
-        
-        <div className="relative z-10 max-w-3xl">
-          <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-extrabold mb-6"
-          >
-            Hey, I’m <span className="bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">Shahmeer</span>
-          </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-lg md:text-2xl text-gray-300 mb-8 leading-relaxed"
-          >
-            Passionate about <span className="text-indigo-400">Web Development</span>.  
-            I craft sleek apps with modern tech and scalable design.
-          </motion.p>
+    <div className="min-h-screen bg-black text-white">
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="flex flex-wrap justify-center gap-6"
-          >
-            <Link href="#projects" className="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold shadow-lg hover:opacity-90 transition">
-              View Projects
-            </Link>
-            <Link href="#contact" className="px-6 py-3 rounded-xl bg-gray-800 text-gray-200 font-semibold shadow-lg hover:bg-gray-700 transition">
-              Contact Me
-            </Link>
-          </motion.div>
+      {/* Navigation Bar */}
+      <header className="py-4 px-8 flex justify-between items-center fixed top-0 left-0 right-0 z-10 bg-black border-b border-gray-900">
+        <h1 className="text-xl font-bold text-white tracking-widest">Shahmeer Shahid</h1>
+        <nav className="hidden md:flex space-x-8 text-sm uppercase">
+          <a href="#" className="hover:text-gray-400">Home</a>
+          <a href="/webdev" className="hover:text-gray-400">Web Development</a>
+          <a href="/cs" className="hover:text-gray-400">Cyber Seurity</a>
+          <a href="/about" className="hover:text-gray-400">About Me</a>
+          <a href="#" className="hover:text-gray-400">Contact</a>
+        </nav>
+
+        {/* Menu Icon SVG for Mobile */}
+        <button className="md:hidden text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </header>
+
+      {/* Main Portfolio Layout (Hero Section) */}
+      {/* We use pt-16 (padding top) on small screens to push content below the fixed header */}
+      <main className="flex flex-col md:flex-row min-h-screen pt-16 md:pt-0">
+
+        {/* Left Side: Image */}
+        <div className="w-full md:w-1/2 bg-black relative">
+          <img
+            src="/images/adeline-palmerston.jpg" // **Ensure this path is correct relative to your public directory**
+            alt="Adeline Palmerston"
+            className="w-full h-full object-cover opacity-90"
+            // Ensure the container fills the viewport height for the layout to work on desktop
+            style={{ minHeight: '100vh', '@media (min-width: 768px)': { minHeight: 'auto' } }}
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-10"></div>
         </div>
-      </section>
 
-      {/* ABOUT */}
-      <section id="about" className="py-20 container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold mb-6 text-white">About Me</h2>
-        <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
-          I’m a passionate developer turning ideas into functional, user-friendly digital products. My stack revolves around React, Next.js, Tailwind, and modern web technologies.
-        </p>
-      </section>
+        {/* Right Side: Text Content */}
+        <div className="w-full md:w-1/2 bg-black p-8 md:p-16 flex flex-col justify-center">
+          <div className="max-w-xl">
 
-      {/* SERVICES */}
-      <section id="services" className="py-20 container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold mb-12 text-white">What I Do</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {[{ title: "Frontend Development", desc: "Crafting sleek UIs with React, Next.js & Tailwind CSS.", icon: <FaLaptopCode /> },
-          { title: "Backend Development", desc: "Building APIs & databases with secure logic.", icon: <FaServer /> },
-          { title: "Full-Stack Projects", desc: "Delivering complete solutions from ideation to deployment.", icon: <FaDatabase /> }].map((s, idx) => (
-            <motion.div key={idx} whileHover={{ scale: 1.05, y: -5 }} className="p-8 bg-[#2b2b2b] rounded-2xl shadow-lg border border-gray-700 hover:border-transparent hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-600 transition">
-              <div className="flex items-center justify-center text-3xl mb-4 text-indigo-400">{s.icon}</div>
-              <h3 className="text-2xl font-semibold mb-4">{s.title}</h3>
-              <p className="text-gray-300">{s.desc}</p>
-            </motion.div>
-          ))}
+            {/* Title Section */}
+            <h2 className="text-7xl md:text-8xl font-extrabold leading-none mb-4">
+              My
+            </h2>
+
+            {/* Portfolio Title and Separator Line */}
+            <div className="flex items-center space-x-4 mb-8">
+              <h2 className="text-7xl md:text-8xl font-extrabold leading-none">
+                Portfolio
+              </h2>
+              <div className="flex-grow border-t border-white"></div>
+            </div>
+
+            {/* Description Text */}
+            <p className="text-sm text-gray-400 mb-10 leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            </p>
+
+            {/* Action Buttons */}
+            <div className="flex items-center space-x-6">
+              <button className="bg-white text-black font-semibold py-3 px-8 text-sm uppercase transition duration-300 hover:bg-gray-200">
+                Explore Now
+              </button>
+
+              <div className="flex items-center text-white cursor-pointer group">
+                {/* Play Icon SVG */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 p-1 rounded-full border border-white mr-2 transition duration-300 group-hover:bg-white group-hover:text-black" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm uppercase tracking-wider">Play Video</span>
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </main>
 
-      {/* PROJECTS */}
-      <section id="projects" className="py-20 container mx-auto px-6">
-        <h2 className="text-4xl font-bold mb-12 text-center text-white">My Projects</h2>
-        <div className="grid md:grid-cols-3 gap-10">
-          {items.map((item, idx) => (
-            <motion.a key={idx} href={item.url} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.04, y: -6 }}
-              transition={{ type: "spring", stiffness: 250, damping: 15 }}
-              className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-500/30 transition-all duration-300">
-              <div className="h-64 flex items-end p-6 relative" style={{ backgroundImage: `url(${item.image})`, backgroundSize: "cover", backgroundPosition: "center" }}>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
-                <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-white drop-shadow-lg">{item.title}</h3>
-                  <p className="text-sm text-gray-200 mt-2 opacity-0 group-hover:opacity-100 transition">{item.description}</p>
+      <div className="min-h-screen  text-white font-sans py-16 md:py-24">
+        <main className="max-w-7xl mx-auto px-6 lg:px-8">
+
+          <section className="flex flex-col md:flex-row gap-10 md:gap-16">
+
+            {/* Left Column: Text Content (Approx 50% width on desktop) */}
+            <div className="w-full md:w-1/2 flex flex-col justify-between">
+              <div>
+                {/* Main Title and Underline */}
+                <h1 className="text-6xl sm:text-7xl font-extrabold mb-4">
+                  Introduction
+                </h1>
+                <div className="w-24 border-b-4 border-white mb-10"></div>
+
+                {/* Main Descriptive Text Block */}
+                <p className="text-base text-gray-300 mb-16 leading-relaxed max-w-lg">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
+                </p>
+              </div>
+
+              {/* Bottom Section: Two Columns ("About Me" and "About Portfolio") */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-gray-700/50">
+                {/* About Me Column */}
+                <div>
+                  <h2 className="text-xl font-bold text-white mb-3">About Me</h2>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo commodo
+                  </p>
+                </div>
+
+                {/* About Portfolio Column */}
+                <div>
+                  <h2 className="text-xl font-bold text-white mb-3">About Portfolio</h2>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  </p>
                 </div>
               </div>
-            </motion.a>
-          ))}
-        </div>
-      </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="py-20 container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold mb-6 text-white">Let’s Connect</h2>
-        <p className="text-lg text-gray-400 mb-8">Have an idea or project? Let’s build it together.</p>
-        <div className="flex flex-wrap justify-center gap-8 text-lg">
-          <Link href="https://github.com/shahmeerhere" className="flex items-center gap-2 hover:text-indigo-400 transition"><FaLaptopCode /> GitHub</Link>
-          <Link href="https://linkedin.com/in/shahmeershahid" className="flex items-center gap-2 hover:text-pink-400 transition">LinkedIn</Link>
-          <Link href="mailto:theshahmeer786@gmail.com" className="flex items-center gap-2 hover:text-cyan-400 transition"><FaEnvelope /> Email</Link>
-        </div>
-      </section>
+            </div>
 
-      <footer className="text-center py-6 text-gray-500 border-t border-gray-700">
-        © {new Date().getFullYear()} Shahmeer. All rights reserved.
-      </footer>
+            {/* Right Column: Image (Approx 50% width on desktop) */}
+            <div className="w-full md:w-1/2 relative min-h-[400px]">
+              {/* Using a placeholder image for the interior hall/stable image */}
+              <img
+                src="https://placehold.co/1200x800/222222/ffffff?text=Interior+Hallway"
+                alt="Interior Hallway"
+                className="w-full h-full object-cover shadow-2xl"
+              />
+              {/* Adding a subtle dark overlay to match the image's B&W/dark feel */}
+              <div className="absolute inset-0 bg-black bg-opacity-10"></div>
+            </div>
+          </section>
+
+        </main>
+      </div>
     </div>
-  )
-}
+  );
+};
+
+export default HomePage;
