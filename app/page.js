@@ -6,6 +6,7 @@ import { FaLaptopCode, FaServer, FaDatabase, FaEnvelope } from "react-icons/fa"
 export default function Portfolio() {
   const items = [
     { image: "/p6.png", title: "Instagram Clone", description: "Full-stack clone with auth, posts, responsive UI.", url: "https://minegram-tawny.vercel.app/" },
+    { image: "/p9.png", title: "Food Genie", description: "AI powered food app with database and responsive UI.", url: "https://foodgenie-lg9n.vercel.app/" },
     { image: "/p7.png", title: "Morva", description: "Scalable E-Commerce Shoe Store with seamless UX", url: "https://shoestore-9yb9.vercel.app/" },
     { image: "/p8.png", title: "Just Me", description: "Access your personal vault anytime, anywhere.", url: "https://justme-ashy.vercel.app/" },
     { image: "/p5.png", title: "Cars Vault", description: "Elegant car showroom app with modern design.", url: "https://carsvault.vercel.app/" },
