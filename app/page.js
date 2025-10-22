@@ -13,7 +13,7 @@ const HomePage = () => {
           <a href="/webdev" className="hover:text-gray-400">Web Development</a>
           <a href="/cs" className="hover:text-gray-400">Cyber Seurity</a>
           <a href="/about" className="hover:text-gray-400">About Me</a>
-          <a href="#" className="hover:text-gray-400">Contact</a>
+          <a href="/contact" className="hover:text-gray-400">Contact</a>
         </nav>
 
         {/* Menu Icon SVG for Mobile */}
