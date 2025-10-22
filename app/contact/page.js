@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const Contact = () => {
@@ -11,9 +12,11 @@ const Contact = () => {
 
                 {/* Left Image Panel */}
                 <div className="w-full md:w-1/2 relative h-96 md:h-auto bg-[#111]">
-                    <img
+                    <Image
                         src="https://placehold.co/1000x1200/0a0a0a/ffffff?text=Cyber+Tech+Structure"
                         alt="Futuristic cyber architecture"
+                        width={1000}
+                        height={1200}
                         className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition duration-700"
                     />
                 </div>
@@ -44,11 +47,10 @@ const Contact = () => {
                             className="text-gray-400 leading-relaxed"
                         >
                             Open for collaborations, freelance projects, and cybersecurity-focused roles.
-                            Let’s build something meaningful — whether it’s a secure web platform,
+                            Lets build something meaningful whether it is a secure web platform,
                             scalable architecture, or an automation system that works smarter.
                         </motion.p>
 
-                        {/* Contact List */}
                         {/* Contact List */}
                         <motion.div
                             initial={{ opacity: 0 }}
@@ -106,7 +108,6 @@ const Contact = () => {
                                 <span>linkedin.com/in/shahmeershahid</span>
                             </a>
 
-
                             {/* GitHub */}
                             <a
                                 href="https://github.com/shahmeerhere"
@@ -114,7 +115,13 @@ const Contact = () => {
                                 rel="noopener noreferrer"
                                 className="flex items-center space-x-3 hover:text-cyan-400 transition"
                             >
-                                <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" className="h-5 w-5 text-cyan-400" />
+                                <Image
+                                    src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+                                    alt="GitHub"
+                                    width={20}
+                                    height={20}
+                                    className="h-5 w-5 text-cyan-400"
+                                />
                                 <span>GitHub</span>
                             </a>
 
@@ -125,7 +132,13 @@ const Contact = () => {
                                 rel="noopener noreferrer"
                                 className="flex items-center space-x-3 hover:text-cyan-400 transition"
                             >
-                                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" className="h-5 w-5 text-cyan-400" />
+                                <Image
+                                    src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                                    alt="Instagram"
+                                    width={20}
+                                    height={20}
+                                    className="h-5 w-5 text-cyan-400"
+                                />
                                 <span>Instagram</span>
                             </a>
 
@@ -136,7 +149,13 @@ const Contact = () => {
                                 rel="noopener noreferrer"
                                 className="flex items-center space-x-3 hover:text-cyan-400 transition"
                             >
-                                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Fiverr" className="h-5 w-5 text-cyan-400" />
+                                <Image
+                                    src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
+                                    alt="Fiverr"
+                                    width={20}
+                                    height={20}
+                                    className="h-5 w-5 text-cyan-400"
+                                />
                                 <span>Fiverr</span>
                             </a>
 
@@ -147,7 +166,13 @@ const Contact = () => {
                                 rel="noopener noreferrer"
                                 className="flex items-center space-x-3 hover:text-cyan-400 transition"
                             >
-                                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968709.png" alt="Upwork" className="h-5 w-5 text-cyan-400" />
+                                <Image
+                                    src="https://cdn-icons-png.flaticon.com/512/5968/5968709.png"
+                                    alt="Upwork"
+                                    width={20}
+                                    height={20}
+                                    className="h-5 w-5 text-cyan-400"
+                                />
                                 <span>Upwork</span>
                             </a>
 
@@ -159,7 +184,6 @@ const Contact = () => {
                                 <span>Islamabad, Pakistan</span>
                             </div>
                         </motion.div>
-
                     </div>
                 </div>
             </section>
@@ -180,19 +204,21 @@ const Contact = () => {
                         </h1>
                         <div className="w-24 border-b-4 border-cyan-400 mb-10"></div>
                         <p className="text-gray-400 leading-relaxed mb-6">
-                            I appreciate you taking the time to explore my work. If you're seeking someone driven, creative, and deeply focused on cybersecurity and full-stack development — you’ve found the right person.
+                            I appreciate you taking the time to explore my work. If you are seeking someone driven, creative, and deeply focused on cybersecurity and full-stack development you have found the right person.
                         </p>
                         <p className="text-gray-400 leading-relaxed">
-                            Let’s connect and build the future securely, one line of code at a time.
+                            Let us connect and build the future securely, one line of code at a time.
                         </p>
                     </motion.div>
                 </div>
 
                 {/* Image Section */}
                 <div className="w-full md:w-1/2 relative h-96 md:h-auto bg-[#111]">
-                    <img
+                    <Image
                         src="https://placehold.co/1000x1200/0a0a0a/ffffff?text=Digital+Skyline"
                         alt="Digital skyline in futuristic tones"
+                        width={1000}
+                        height={1200}
                         className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700"
                     />
                 </div>

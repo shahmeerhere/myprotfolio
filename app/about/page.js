@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const AboutMePage = () => {
   const teamMembers = [
@@ -35,15 +36,15 @@ const AboutMePage = () => {
       <section className="grid grid-cols-1 sm:grid-cols-3">
         {[
           {
-            src: "https://placehold.co/800x600/1f2937/ffffff?text=Innovation",
+            src: "/p1.png",
             alt: "Abstract architecture",
           },
           {
-            src: "https://placehold.co/800x600/000000/ffffff?text=Momentum",
+            src: "/p1.png",
             alt: "Dynamic high-angle shot",
           },
           {
-            src: "https://placehold.co/800x600/111111/ffffff?text=Structure",
+            src: "/p1.png",
             alt: "Modern building detail",
           },
         ].map((img, i) => (
@@ -55,9 +56,11 @@ const AboutMePage = () => {
             transition={{ duration: 0.8, delay: i * 0.2 }}
             viewport={{ once: true }}
           >
-            <img
+            <Image
               src={img.src}
               alt={img.alt}
+              width={800}
+              height={600}
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700"
             />
           </motion.div>
@@ -127,11 +130,13 @@ const AboutMePage = () => {
             "https://placehold.co/600x1200/000000/ffffff?text=Innovation",
             "https://placehold.co/600x1200/222222/ffffff?text=Focus",
           ].map((src, i) => (
-            <img
+            <Image
               key={i}
               src={src}
               alt="Vision imagery"
-              className="w-1/2 object-cover grayscale hover:grayscale-0 transition duration-700"
+              width={600}
+              height={1200}
+              className="w-1/2 h-auto object-cover grayscale hover:grayscale-0 transition duration-700"
             />
           ))}
         </motion.div>
@@ -204,10 +209,12 @@ const AboutMePage = () => {
             "https://placehold.co/600x600/000000/ffffff?text=Code",
             "https://placehold.co/600x600/444444/ffffff?text=Reflect",
           ].map((src, i) => (
-            <img
+            <Image
               key={i}
               src={src}
               alt="Mission imagery"
+              width={600}
+              height={600}
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700"
             />
           ))}
@@ -240,10 +247,12 @@ const AboutMePage = () => {
               viewport={{ once: true }}
             >
               <div className="w-full max-w-xs mx-auto overflow-hidden rounded-lg mb-6">
-                <img
+                <Image
                   src={member.imageSrc}
                   alt={member.name}
-                  className="w-full object-cover grayscale hover:grayscale-0 transition duration-700"
+                  width={400}
+                  height={400}
+                  className="w-full h-auto object-cover grayscale hover:grayscale-0 transition duration-700"
                 />
               </div>
               <h2 className="text-lg font-bold mb-2 uppercase tracking-wider">

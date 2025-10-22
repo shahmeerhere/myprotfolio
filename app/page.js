@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function HomePage() {
   // Animation variants
@@ -25,13 +26,16 @@ export default function HomePage() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="w-full md:w-1/2 relative overflow-hidden"
         >
-          <motion.img
-            src="i.png"
-            alt="Portfolio Visual"
-            className="w-full h-[60vh] md:h-screen object-cover opacity-90"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.8 }}
-          />
+          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }}>
+            <Image
+              src="/i.png"
+              alt="Portfolio Visual"
+              width={1000}
+              height={1000}
+              className="w-full h-[60vh] md:h-screen object-cover opacity-90"
+              priority
+            />
+          </motion.div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
         </motion.figure>
 
@@ -43,26 +47,25 @@ export default function HomePage() {
           className="w-full md:w-1/2 p-8 sm:p-10 md:p-16 flex flex-col justify-center text-center md:text-left"
         >
           <div className="max-w-xl mx-auto md:mx-0 space-y-6">
-           {/* Headings */}
-<motion.div
-  initial={{ y: 40, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{ duration: 1 }}
-  className="w-full flex justify-start"
->
-  <div>
-    <h1 className="text-left leading-tight font-extrabold text-white text-5xl sm:text-6xl md:text-7xl">
-      My
-    </h1>
-    <div className="flex items-center gap-4">
-      <h1 className="text-left font-extrabold text-white text-5xl sm:text-6xl md:text-7xl">
-        Portfolio
-      </h1>
-      <span className="hidden sm:block h-[2px] w-16 bg-gray-400"></span>
-    </div>
-  </div>
-</motion.div>
-
+            {/* Headings */}
+            <motion.div
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="w-full flex justify-start"
+            >
+              <div>
+                <h1 className="text-left leading-tight font-extrabold text-white text-5xl sm:text-6xl md:text-7xl">
+                  My
+                </h1>
+                <div className="flex items-center gap-4">
+                  <h1 className="text-left font-extrabold text-white text-5xl sm:text-6xl md:text-7xl">
+                    Portfolio
+                  </h1>
+                  <span className="hidden sm:block h-[2px] w-16 bg-gray-400"></span>
+                </div>
+              </div>
+            </motion.div>
 
             {/* Description */}
             <motion.p
@@ -163,7 +166,9 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-             I am Shahmeer Shahid, a tech-driven creator obsessed with building, breaking, and securing the web. I design digital systems that dont just work they evolve with the future.
+              I am Shahmeer Shahid, a tech-driven creator obsessed with building, breaking, and
+              securing the web. I design digital systems that don’t just work — they evolve with the
+              future.
             </motion.p>
 
             {/* Info Blocks */}
@@ -204,13 +209,15 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="w-full md:w-1/2 relative rounded-2xl overflow-hidden shadow-2xl"
           >
-            <motion.img
-              src="cw.jpg"
-              alt="Workspace"
-              className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
-              whileHover={{ scale: 1.04 }}
-              transition={{ duration: 0.6 }}
-            />
+            <motion.div whileHover={{ scale: 1.04 }} transition={{ duration: 0.6 }}>
+              <Image
+                src="/cw.jpg"
+                alt="Workspace"
+                width={1000}
+                height={800}
+                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
+              />
+            </motion.div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
           </motion.figure>
         </main>

@@ -1,6 +1,7 @@
-"use client"
-import { motion } from "framer-motion"
-import Link from "next/link"
+"use client";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image"; // ✅ Added
 import { FaLaptopCode, FaEnvelope } from "react-icons/fa";
 
 export default function AspirantHero() {
@@ -12,8 +13,19 @@ export default function AspirantHero() {
           A S P I R A N T
         </h1>
         <button className="md:hidden text-white hover:text-gray-400 transition">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
           </svg>
         </button>
       </header>
@@ -27,10 +39,14 @@ export default function AspirantHero() {
           transition={{ duration: 1 }}
           className="w-full md:w-1/2 relative"
         >
-          <img
-            src="cs.png"
+          {/* ✅ Replaced <img> with <Image> */}
+          <Image
+            src="/cs.png"
             alt="Shahmeer Shahid — Red Hat Journey"
+            width={1000}
+            height={1200}
             className="w-full h-full object-cover opacity-90"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
         </motion.div>
@@ -58,7 +74,8 @@ export default function AspirantHero() {
               transition={{ delay: 0.5, duration: 0.9 }}
               className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight"
             >
-              Red Hat Specialist <br /> <span className="text-gray-400">In the Making</span>
+              Red Hat Specialist <br />{" "}
+              <span className="text-gray-400">In the Making</span>
             </motion.h1>
 
             <motion.p
@@ -67,11 +84,13 @@ export default function AspirantHero() {
               transition={{ delay: 0.7, duration: 1 }}
               className="text-gray-300 mb-10 leading-relaxed text-base sm:text-lg"
             >
-              I’m <span className="text-white font-semibold">Shahmeer Shahid</span>, a computer science student pushing boundaries in
+              I’m <span className="text-white font-semibold">Shahmeer Shahid</span>, a computer
+              science student pushing boundaries in
               <span className="text-white"> web development</span> and
-              <span className="text-white"> cybersecurity</span>.
-              Currently gearing up for <span className="text-red-500 font-bold">Red Hat certification</span> —
-              building hands-on Linux expertise, automating with Ansible, and deploying secure cloud environments.
+              <span className="text-white"> cybersecurity</span>. Currently gearing up for{" "}
+              <span className="text-red-500 font-bold">Red Hat certification</span> — building
+              hands-on Linux expertise, automating with Ansible, and deploying secure cloud
+              environments.
             </motion.p>
 
             {/* BUTTON GROUP */}
@@ -96,7 +115,7 @@ export default function AspirantHero() {
               </a>
 
               <a
-                href="/resume.pdf" // replace with your actual file path in /public
+                href="/resume.pdf"
                 download
                 className="px-6 py-3 bg-transparent border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black transition shadow-md hover:shadow-cyan-500/40 text-center w-full sm:w-auto"
               >
@@ -106,14 +125,30 @@ export default function AspirantHero() {
           </div>
         </motion.div>
       </main>
+
       {/* CONTACT */}
       <section id="contact" className="py-20 px-6 text-center">
         <h2 className="text-4xl font-bold mb-6 text-white">Let’s Connect</h2>
         <p className="text-lg text-gray-400 mb-8">Have an idea? Let’s make it real.</p>
         <div className="flex flex-wrap justify-center gap-8 text-lg">
-          <Link href="https://github.com/shahmeerhere" className="flex items-center gap-2 hover:text-white transition"><FaLaptopCode /> GitHub</Link>
-          <Link href="https://linkedin.com/in/shahmeershahid" className="flex items-center gap-2 hover:text-white transition">LinkedIn</Link>
-          <Link href="mailto:theshahmeer786@gmail.com" className="flex items-center gap-2 hover:text-white transition"><FaEnvelope /> Email</Link>
+          <Link
+            href="https://github.com/shahmeerhere"
+            className="flex items-center gap-2 hover:text-white transition"
+          >
+            <FaLaptopCode /> GitHub
+          </Link>
+          <Link
+            href="https://linkedin.com/in/shahmeershahid"
+            className="flex items-center gap-2 hover:text-white transition"
+          >
+            LinkedIn
+          </Link>
+          <Link
+            href="mailto:theshahmeer786@gmail.com"
+            className="flex items-center gap-2 hover:text-white transition"
+          >
+            <FaEnvelope /> Email
+          </Link>
         </div>
       </section>
 
@@ -122,5 +157,5 @@ export default function AspirantHero() {
         Theme | Aspirant Mode ⚡
       </div>
     </div>
-  )
+  );
 }

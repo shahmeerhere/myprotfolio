@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { FaLaptopCode, FaServer, FaDatabase, FaEnvelope } from "react-icons/fa";
 
 export default function Portfolio() {
@@ -22,11 +23,15 @@ export default function Portfolio() {
 
       {/* HERO SECTION */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6">
-        <img
-          src="web.jpg"
-          alt="Hero background"
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="/web.jpg"
+            alt="Hero background"
+            fill
+            className="object-cover opacity-70"
+            priority
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/70 to-black"></div>
 
         <div className="relative z-10 max-w-3xl">
@@ -72,9 +77,8 @@ export default function Portfolio() {
               Contact Me
             </Link>
 
-            {/* Resume Button */}
             <a
-              href="/resume-webdev.pdf" // or /resume-cyber.pdf depending on context
+              href="/resume-webdev.pdf"
               download
               className="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-white text-black font-semibold hover:bg-gray-200 transition"
             >
@@ -83,7 +87,6 @@ export default function Portfolio() {
           </motion.div>
         </div>
       </section>
-
 
       {/* ABOUT */}
       <section id="about" className="py-20 px-6 md:px-16 lg:px-24 bg-black">
@@ -120,14 +123,14 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="md:w-1/2 flex justify-center"
           >
-            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-[#1a1a1a] shadow-2xl overflow-hidden flex items-center justify-center hover:scale-105 transition-transform duration-500 ease-out">
-              <img
+            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-[#1a1a1a] shadow-2xl overflow-hidden flex items-center justify-center hover:scale-105 transition-transform duration-500 ease-out relative">
+              <Image
                 src="/web.jpg"
                 alt="Cover"
-                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-110"
+                fill
+                className="object-cover object-center transition-transform duration-700 hover:scale-110"
               />
             </div>
-
           </motion.div>
         </div>
       </section>
@@ -166,16 +169,15 @@ export default function Portfolio() {
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
               className="group relative rounded-2xl overflow-hidden shadow-lg border border-gray-800 hover:shadow-white/20 transition-all duration-300"
             >
-              <div
-                className="h-64 flex items-end p-6 relative"
-                style={{
-                  backgroundImage: `url(${item.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
+              <div className="relative h-64">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
-                <div className="relative z-10">
+                <div className="absolute bottom-6 left-6 z-10">
                   <h3 className="text-xl font-bold text-white">{item.title}</h3>
                   <p className="text-sm text-gray-300 mt-2 opacity-0 group-hover:opacity-100 transition-all">
                     {item.description}
