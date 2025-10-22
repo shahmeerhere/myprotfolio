@@ -25,6 +25,9 @@ export default function RootLayout({ children }) {
       >
         <Navbar />    
         <main>{children}</main>
+         <footer className="text-center py-6 text-gray-500 border-t border-gray-800">
+        © {new Date().getFullYear()} Shahmeer Shahid. All rights reserved.
+      </footer>
       </body>
     </html>
   );

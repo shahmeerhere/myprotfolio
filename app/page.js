@@ -43,18 +43,26 @@ export default function HomePage() {
           className="w-full md:w-1/2 p-8 sm:p-10 md:p-16 flex flex-col justify-center text-center md:text-left"
         >
           <div className="max-w-xl mx-auto md:mx-0 space-y-6">
-            {/* Headings */}
-            <motion.h1
-              initial={{ y: 40, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
-              className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight"
-            >
-              <span className="block text-white">My</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-                Portfolio
-              </span>
-            </motion.h1>
+           {/* Headings */}
+<motion.div
+  initial={{ y: 40, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 1 }}
+  className="w-full flex justify-start"
+>
+  <div>
+    <h1 className="text-left leading-tight font-extrabold text-white text-5xl sm:text-6xl md:text-7xl">
+      My
+    </h1>
+    <div className="flex items-center gap-4">
+      <h1 className="text-left font-extrabold text-white text-5xl sm:text-6xl md:text-7xl">
+        Portfolio
+      </h1>
+      <span className="hidden sm:block h-[2px] w-16 bg-gray-400"></span>
+    </div>
+  </div>
+</motion.div>
+
 
             {/* Description */}
             <motion.p
