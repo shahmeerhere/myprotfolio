@@ -1,317 +1,262 @@
+"use client";
+import { motion } from "framer-motion";
+
 const AboutMePage = () => {
-  // Data structure for team members (assuming four as per the image)
   const teamMembers = [
     {
       name: "Brigitte Schwartz",
       imageSrc: "https://placehold.co/400x400/333333/ffffff?text=Brigitte",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Ut enim ad minim.",
+      description:
+        "Front-end engineer obsessed with micro-interactions, accessibility, and building interfaces that feel alive.",
     },
     {
       name: "Alfredo Torres",
       imageSrc: "https://placehold.co/400x400/111111/ffffff?text=Alfredo",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Ut enim ad minim.",
+      description:
+        "Full-stack developer who turns system architecture chaos into scalable, high-performance codebases.",
     },
     {
       name: "Adora Montminy",
       imageSrc: "https://placehold.co/400x400/222222/ffffff?text=Adora",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Ut enim ad minim.",
+      description:
+        "Product designer focused on crafting emotionally intelligent digital experiences through user empathy.",
     },
     {
       name: "Daniel Gallego",
       imageSrc: "https://placehold.co/400x400/000000/ffffff?text=Daniel",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Ut enim ad minim.",
+      description:
+        "Cybersecurity strategist ensuring resilience across web systems with deep focus on network integrity.",
     },
   ];
 
-   
-
-
   return (
-    // Main container set to a dark background
-    <div className="min-h-screen bg-black text-white font-sans">
-
-      {/* Top Image Gallery: 3 Columns */}
-      <section className="grid grid-cols-1 sm:grid-cols-3 gap-0">
-        {/* Image 1: Fluid, Wavy Building */}
-        <div className="relative h-64 sm:h-96">
-          <img
-            src="https://placehold.co/800x600/1f2937/ffffff?text=Wavy+Architecture"
-            alt="Abstract architecture"
-            className="w-full h-full object-cover grayscale"
-          />
-        </div>
-
-        {/* Image 2: Dramatic High Angle (Jumping Person) */}
-        <div className="relative h-64 sm:h-96">
-          <img
-            src="https://placehold.co/800x600/000000/ffffff?text=Dynamic+Action"
-            alt="Dynamic high-angle shot"
-            className="w-full h-full object-cover grayscale"
-          />
-        </div>
-
-        {/* Image 3: Modern Building Detail */}
-        <div className="relative h-64 sm:h-96">
-          <img
-            src="https://placehold.co/800x600/111111/ffffff?text=Modern+Building"
-            alt="Modern building detail"
-            className="w-full h-full object-cover grayscale"
-          />
-        </div>
+    <main className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
+      {/* 🖼️ Top Image Gallery */}
+      <section className="grid grid-cols-1 sm:grid-cols-3">
+        {[
+          {
+            src: "https://placehold.co/800x600/1f2937/ffffff?text=Innovation",
+            alt: "Abstract architecture",
+          },
+          {
+            src: "https://placehold.co/800x600/000000/ffffff?text=Momentum",
+            alt: "Dynamic high-angle shot",
+          },
+          {
+            src: "https://placehold.co/800x600/111111/ffffff?text=Structure",
+            alt: "Modern building detail",
+          },
+        ].map((img, i) => (
+          <motion.div
+            key={i}
+            className="relative h-64 sm:h-96"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: i * 0.2 }}
+            viewport={{ once: true }}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700"
+            />
+          </motion.div>
+        ))}
       </section>
 
-      {/* About Me Content Section */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-32">
-
-        <div className="flex flex-col lg:flex-row gap-16">
-
-          {/* Left Block: "About Me" Title */}
-          <div className="w-full lg:w-1/3 flex-shrink-0">
+      {/* 🧠 About Section */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24 md:py-32">
+        <div className="flex flex-col lg:flex-row gap-16 items-start">
+          {/* Left Title */}
+          <motion.header
+            className="w-full lg:w-1/3"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <h1 className="text-6xl sm:text-7xl font-extrabold mb-4">
               About Me
             </h1>
-            {/* Subtle Underline */}
-            <div className="w-16 border-b-4 border-white"></div>
-          </div>
+            <div className="w-20 border-b-4 border-white"></div>
+          </motion.header>
 
-          {/* Right Blocks: Vision and Mission Columns */}
-          <div className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-12">
-
-            {/* My Vision Column */}
-            <div>
-              <h2 className="text-xl font-bold text-gray-300 mb-3 uppercase tracking-wider">My Vision</h2>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo commodo.
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.
-              </p>
-            </div>
-
-            {/* My Mission Column */}
-            <div>
-              <h2 className="text-xl font-bold text-gray-300 mb-3 uppercase tracking-wider">My Mission</h2>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              </p>
-            </div>
-
-          </div>
-        </div>
-
-      </section>
-      <div className="min-h-screen bg-black text-white font-sans py-20 md:py-32 px-6 lg:px-12">
-        <main className="flex flex-col md:flex-row min-h-screen">
-
-          {/* Left Side: Two Vertical Images (Approx 50% width on desktop) */}
-          <div className="w-full md:w-1/2 flex flex-row">
-            {/* Image 1: Power Lines */}
-            <div className="w-1/2 relative h-96 md:h-full">
-              <img
-                src="https://placehold.co/600x1200/000000/ffffff?text=Power+Tower"
-                alt="Electrical power pylon"
-                className="w-full h-full object-cover grayscale"
-              />
-            </div>
-
-            {/* Image 2: Viewfinder/Binoculars */}
-            <div className="w-1/2 relative h-96 md:h-full">
-              <img
-                src="https://placehold.co/600x1200/222222/ffffff?text=Viewfinder"
-                alt="Binoculars on stand overlooking water"
-                className="w-full h-full object-cover grayscale"
-              />
-            </div>
-          </div>
-
-          {/* Right Side: Text Content (Approx 50% width on desktop) */}
-          <div className="w-full md:w-1/2 bg-black p-8 md:p-16 flex flex-col justify-center">
-            <div className="max-w-xl mx-auto md:mx-0">
-
-              {/* Main Title and Underline */}
-              <h1 className="text-6xl sm:text-7xl font-extrabold mb-4">
+          {/* Right Description */}
+          <motion.section
+            className="w-full lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-12"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9 }}
+            viewport={{ once: true }}
+          >
+            <article>
+              <h2 className="text-xl font-bold text-gray-300 mb-3 uppercase tracking-wider">
                 My Vision
-              </h1>
-              {/* The underline element */}
-              <div className="w-24 border-b-4 border-white mb-16"></div>
+              </h2>
+              <p className="text-gray-400 leading-relaxed">
+                To merge design and logic into digital systems that speak to both
+                humans and machines. I envision a future where every interface
+                feels intuitive, secure, and intelligently built for scale.
+              </p>
+            </article>
 
-              {/* Numbered Vision Points */}
-              <div className="space-y-12">
-
-                {/* Vision Point 1 */}
-                <div className="flex items-start space-x-6">
-                  {/* Number 01. */}
-                  <span className="text-4xl font-extrabold text-white pt-1">01.</span>
-                  {/* Descriptive Text */}
-                  <p className="text-base text-gray-300 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
-                  </p>
-                </div>
-
-                {/* Vision Point 2 */}
-                <div className="flex items-start space-x-6">
-                  {/* Number 02. */}
-                  <span className="text-4xl font-extrabold text-white pt-1">02.</span>
-                  {/* Descriptive Text */}
-                  <p className="text-base text-gray-300 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                  </p>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-
-      <div className="min-h-screen bg-black text-white font-sans py-20 md:py-32 px-6 lg:px-12">
-        <main className="flex flex-col md:flex-row min-h-screen">
-
-          {/* Left Side: Text Content (Approx 50% width on desktop) */}
-          <div className="w-full md:w-1/2 bg-black p-8 md:p-16 flex flex-col justify-center">
-            <div className="max-w-xl mx-auto md:mx-0">
-
-              {/* Main Title and Underline */}
-              <h1 className="text-6xl sm:text-7xl font-extrabold mb-4">
+            <article>
+              <h2 className="text-xl font-bold text-gray-300 mb-3 uppercase tracking-wider">
                 My Mission
-              </h1>
-              {/* The underline element */}
-              <div className="w-24 border-b-4 border-white mb-16"></div>
+              </h2>
+              <p className="text-gray-400 leading-relaxed">
+                To craft seamless user experiences backed by robust engineering.
+                My mission is to bridge creativity and security in modern
+                software ecosystems while keeping innovation human-centric.
+              </p>
+            </article>
+          </motion.section>
+        </div>
+      </section>
 
-              {/* Numbered Mission Points */}
-              <div className="space-y-10">
+      {/* ⚡ Vision Section */}
+      <section className="flex flex-col md:flex-row min-h-screen">
+        <motion.div
+          className="w-full md:w-1/2 flex"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          {[
+            "https://placehold.co/600x1200/000000/ffffff?text=Innovation",
+            "https://placehold.co/600x1200/222222/ffffff?text=Focus",
+          ].map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt="Vision imagery"
+              className="w-1/2 object-cover grayscale hover:grayscale-0 transition duration-700"
+            />
+          ))}
+        </motion.div>
 
-                {/* Mission Point 1 */}
-                <div className="flex items-start space-x-6">
-                  {/* Number 01. */}
-                  <span className="text-4xl font-extrabold text-white pt-1">01.</span>
-                  {/* Descriptive Text */}
-                  <p className="text-base text-gray-300 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                  </p>
-                </div>
+        <motion.section
+          className="w-full md:w-1/2 p-10 md:p-20 flex flex-col justify-center bg-black"
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <h1 className="text-5xl sm:text-6xl font-extrabold mb-4">
+            My Vision
+          </h1>
+          <div className="w-24 border-b-4 border-white mb-12"></div>
 
-                {/* Mission Point 2 */}
-                <div className="flex items-start space-x-6">
-                  {/* Number 02. */}
-                  <span className="text-4xl font-extrabold text-white pt-1">02.</span>
-                  {/* Descriptive Text */}
-                  <p className="text-base text-gray-300 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                  </p>
-                </div>
+          <ul className="space-y-10">
+            {[
+              "Create systems that blend functionality with minimalism while staying adaptive to the evolving web.",
+              "Lead innovation that simplifies complexity — building with intent, performance, and clarity.",
+            ].map((point, i) => (
+              <li key={i} className="flex items-start space-x-6">
+                <span className="text-4xl font-extrabold">0{i + 1}.</span>
+                <p className="text-gray-300 leading-relaxed">{point}</p>
+              </li>
+            ))}
+          </ul>
+        </motion.section>
+      </section>
 
-                {/* Mission Point 3 */}
-                <div className="flex items-start space-x-6">
-                  {/* Number 03. */}
-                  <span className="text-4xl font-extrabold text-white pt-1">03.</span>
-                  {/* Descriptive Text */}
-                  <p className="text-base text-gray-300 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                  </p>
-                </div>
+      {/* 🚀 Mission Section */}
+      <section className="flex flex-col md:flex-row min-h-screen">
+        <motion.section
+          className="w-full md:w-1/2 p-10 md:p-20 flex flex-col justify-center"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <h1 className="text-5xl sm:text-6xl font-extrabold mb-4">
+            My Mission
+          </h1>
+          <div className="w-24 border-b-4 border-white mb-12"></div>
 
-                {/* Mission Point 4 */}
-                <div className="flex items-start space-x-6">
-                  {/* Number 04. */}
-                  <span className="text-4xl font-extrabold text-white pt-1">04.</span>
-                  {/* Descriptive Text */}
-                  <p className="text-base text-gray-300 leading-relaxed">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                  </p>
-                </div>
+          <ul className="space-y-10">
+            {[
+              "Develop meaningful, secure, and accessible web platforms.",
+              "Use design thinking to align user goals with technical excellence.",
+              "Adopt a growth mindset for continuous learning and innovation.",
+              "Build digital ecosystems that are reliable, fast, and future-proof.",
+            ].map((point, i) => (
+              <li key={i} className="flex items-start space-x-6">
+                <span className="text-4xl font-extrabold">0{i + 1}.</span>
+                <p className="text-gray-300 leading-relaxed">{point}</p>
+              </li>
+            ))}
+          </ul>
+        </motion.section>
 
-              </div>
-            </div>
-          </div>
+        <motion.div
+          className="w-full md:w-1/2 grid grid-cols-2"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          {[
+            "https://placehold.co/600x600/111111/ffffff?text=Inspire",
+            "https://placehold.co/600x600/333333/ffffff?text=Create",
+            "https://placehold.co/600x600/000000/ffffff?text=Code",
+            "https://placehold.co/600x600/444444/ffffff?text=Reflect",
+          ].map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt="Mission imagery"
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700"
+            />
+          ))}
+        </motion.div>
+      </section>
 
-          {/* Right Side: 2x2 Image Grid (Approx 50% width on desktop) */}
-          <div className="w-full md:w-1/2 grid grid-cols-2 grid-rows-2">
-
-            {/* Image 1: Hugging Couple */}
-            <div className="relative h-48 md:h-full">
-              <img
-                src="https://placehold.co/600x600/111111/ffffff?text=Embrace"
-                alt="Couple hugging"
-                className="w-full h-full object-cover grayscale"
-              />
-            </div>
-
-            {/* Image 2: Yoga/Exercise */}
-            <div className="relative h-48 md:h-full">
-              <img
-                src="https://placehold.co/600x600/333333/ffffff?text=Yoga"
-                alt="Person exercising on a cliff"
-                className="w-full h-full object-cover grayscale"
-              />
-            </div>
-
-            {/* Image 3: Stylish Figure */}
-            <div className="relative h-48 md:h-full">
-              <img
-                src="https://placehold.co/600x600/000000/ffffff?text=Fashion+Shot"
-                alt="Stylish person on a beach"
-                className="w-full h-full object-cover grayscale"
-              />
-            </div>
-
-            {/* Image 4: Pensive Woman */}
-            <div className="relative h-48 md:h-full">
-              <img
-                src="https://placehold.co/600x600/444444/ffffff?text=Pensive+Woman"
-                alt="Woman with hands on head"
-                className="w-full h-full object-cover grayscale"
-              />
-            </div>
-          </div>
-        </main>
-      </div>
-      <div className="min-h-screen bg-black text-white font-sans py-20 md:py-32 px-6 lg:px-12">
-
-        <header className="max-w-4xl mx-auto text-center mb-16">
+      {/* 👥 Team Section */}
+      <section className="py-24 md:py-32 px-6 lg:px-12">
+        <motion.header
+          className="max-w-4xl mx-auto text-center mb-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <h1 className="text-5xl sm:text-6xl font-extrabold mb-4">
             Meet My Team
           </h1>
-          {/* The underline element */}
           <div className="w-20 border-b-4 border-white mx-auto"></div>
-        </header>
+        </motion.header>
 
-        {/* Team Members Grid */}
-        <section className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
-
-          {teamMembers.map((member, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-
-              {/* Image Container */}
-              <div className="w-full max-w-xs overflow-hidden mb-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+          {teamMembers.map((member, i) => (
+            <motion.article
+              key={i}
+              className="text-center"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="w-full max-w-xs mx-auto overflow-hidden rounded-lg mb-6">
                 <img
                   src={member.imageSrc}
                   alt={member.name}
-                  // Styling to achieve the cropped, high-contrast B&W look
-                  className="w-full h-auto object-cover grayscale transition duration-300 hover:grayscale-0"
+                  className="w-full object-cover grayscale hover:grayscale-0 transition duration-700"
                 />
               </div>
-
-              {/* Name */}
-              <h2 className="text-lg font-bold text-white mb-2 uppercase tracking-wider">
+              <h2 className="text-lg font-bold mb-2 uppercase tracking-wider">
                 {member.name}
               </h2>
-
-              {/* Description */}
-              <p className="text-xs text-gray-400 leading-relaxed max-w-[280px]">
-                {member.description}
-              </p>
-            </div>
+              <p className="text-sm text-gray-400">{member.description}</p>
+            </motion.article>
           ))}
+        </div>
+      </section>
 
-        </section>
-
-        
-
-      </div>
-      {/* Placeholder Footer (to ensure page depth) */}
       <footer className="h-16 bg-[#1a1a1a]"></footer>
-
-    </div>
+    </main>
   );
 };
 

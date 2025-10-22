@@ -1,77 +1,126 @@
-// This file contains a simplified Next.js component for the main page (root route '/').
-// It focuses purely on replicating the visual theme and split-screen layout.
+"use client"
+import { motion } from "framer-motion"
+import Link from "next/link"
+import { FaLaptopCode, FaEnvelope } from "react-icons/fa";
 
-const SimplifiedHero = () => {
+export default function AspirantHero() {
   return (
-    // The main container for the entire page, ensuring the dark theme
-    <div className="min-h-screen bg-black text-white font-sans">
-      
-      {/* Fixed Navigation Bar (Simplified) */}
-      <header className="py-4 px-8 flex justify-between items-center fixed top-0 left-0 right-0 z-20 bg-black border-b border-gray-900 shadow-lg">
-        <h1 className="text-xl font-bold text-white tracking-widest">A S P I R A N T</h1>
-        
-        {/* Menu Icon SVG for Mobile (Retained for responsiveness) */}
-        <button className="md:hidden text-white">
+    <div className="min-h-screen bg-black text-white font-sans overflow-hidden">
+      {/* NAVBAR */}
+      <header className="py-4 px-8 flex justify-between items-center fixed top-0 left-0 right-0 z-20 bg-black/90 backdrop-blur-sm border-b border-gray-800 shadow-lg">
+        <h1 className="text-lg sm:text-xl font-bold tracking-[0.25em] text-white">
+          A S P I R A N T
+        </h1>
+        <button className="md:hidden text-white hover:text-gray-400 transition">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
         </button>
       </header>
 
-      {/* Main Portfolio Layout (Hero Section) */}
-      <main className="pt-16 md:pt-0"> 
-        
-        <section className="flex flex-col md:flex-row min-h-screen">
-            
-            {/* Left Side: Placeholder Image */}
-            <div className="w-full md:w-1/2 bg-gray-900 relative min-h-[350px] md:min-h-screen">
-                <img
-                    src="https://placehold.co/800x1200/1f2937/ffffff?text=Professional+Placeholder" 
-                    alt="Professional Profile Placeholder"
-                    className="w-full h-full object-cover opacity-90"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-            </div>
+      {/* HERO SECTION */}
+      <main className="flex flex-col md:flex-row min-h-screen pt-20 md:pt-0">
+        {/* LEFT: IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="w-full md:w-1/2 relative"
+        >
+          <img
+            src="cs.png"
+            alt="Shahmeer Shahid — Red Hat Journey"
+            className="w-full h-full object-cover opacity-90"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+        </motion.div>
 
-            {/* Right Side: Hero Text Content */}
-            <div className="w-full md:w-1/2 bg-black p-8 md:p-16 flex flex-col justify-center">
-                <div className="max-w-xl">
-                    
-                    {/* Simplified Title Section */}
-                    <h2 className="text-5xl font-light text-cyan-400 mb-2">
-                        My Beginner
-                    </h2>
-                    
-                    {/* Main Title and Separator Line */}
-                    <div className="flex items-center space-x-6 mb-10">
-                        <h2 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold leading-none">
-                            Portfolio
-                        </h2>
-                        {/* Horizontal Line: Key visual element retained */}
-                        <div className="flex-grow border-t-2 border-white opacity-50 hidden sm:block"></div>
-                    </div>
+        {/* RIGHT: TEXT CONTENT */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="w-full md:w-1/2 flex flex-col justify-center p-8 sm:p-12 md:p-16 bg-black"
+        >
+          <div className="max-w-xl">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-cyan-400 font-light text-2xl mb-3 tracking-wide"
+            >
+              My Ongoing Journey
+            </motion.h2>
 
-                    {/* Simple Description Text */}
-                    <p className="text-md text-gray-300 mb-10 leading-relaxed max-w-lg">
-                        This clean and striking design serves as the entry point to showcase my technical skills, hands-on projects, and dedication to starting a career in the cybersecurity field.
-                    </p>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.9 }}
+              className="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight"
+            >
+              Red Hat Specialist <br /> <span className="text-gray-400">In the Making</span>
+            </motion.h1>
 
-                    {/* Single Call to Action */}
-                    <a href="#" className="bg-cyan-500 text-black font-semibold py-3 px-8 text-sm uppercase tracking-wider transition duration-300 hover:bg-cyan-400 rounded-lg shadow-xl hover:shadow-cyan-500/50">
-                        View Resume
-                    </a>
-                </div>
-            </div>
-        </section>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 1 }}
+              className="text-gray-300 mb-10 leading-relaxed text-base sm:text-lg"
+            >
+              I’m <span className="text-white font-semibold">Shahmeer Shahid</span>, a computer science student pushing boundaries in
+              <span className="text-white"> web development</span> and
+              <span className="text-white"> cybersecurity</span>.
+              Currently gearing up for <span className="text-red-500 font-bold">Red Hat certification</span> —
+              building hands-on Linux expertise, automating with Ansible, and deploying secure cloud environments.
+            </motion.p>
+
+            {/* BUTTON GROUP */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1, duration: 0.6 }}
+              className="flex flex-wrap gap-4"
+            >
+              <a
+                href="#projects"
+                className="px-6 py-3 bg-cyan-500 text-black font-semibold rounded-lg hover:bg-cyan-400 transition shadow-md hover:shadow-cyan-500/30 text-center w-full sm:w-auto"
+              >
+                View Projects
+              </a>
+
+              <a
+                href="#contact"
+                className="px-6 py-3 border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition shadow-md text-center w-full sm:w-auto"
+              >
+                Connect
+              </a>
+
+              <a
+                href="/resume.pdf" // replace with your actual file path in /public
+                download
+                className="px-6 py-3 bg-transparent border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black transition shadow-md hover:shadow-cyan-500/40 text-center w-full sm:w-auto"
+              >
+                Download Resume
+              </a>
+            </motion.div>
+          </div>
+        </motion.div>
       </main>
+      {/* CONTACT */}
+      <section id="contact" className="py-20 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-6 text-white">Let’s Connect</h2>
+        <p className="text-lg text-gray-400 mb-8">Have an idea? Let’s make it real.</p>
+        <div className="flex flex-wrap justify-center gap-8 text-lg">
+          <Link href="https://github.com/shahmeerhere" className="flex items-center gap-2 hover:text-white transition"><FaLaptopCode /> GitHub</Link>
+          <Link href="https://linkedin.com/in/shahmeershahid" className="flex items-center gap-2 hover:text-white transition">LinkedIn</Link>
+          <Link href="mailto:theshahmeer786@gmail.com" className="flex items-center gap-2 hover:text-white transition"><FaEnvelope /> Email</Link>
+        </div>
+      </section>
 
-      {/* Page Number (Bottom Right Corner) */}
+      {/* FOOTER NOTE */}
       <div className="fixed bottom-4 right-4 text-xs text-gray-500 hidden md:block z-10">
-        Theme | Minimal
+        Theme | Aspirant Mode ⚡
       </div>
-
     </div>
-  );
-};
-
-export default SimplifiedHero;
+  )
+}

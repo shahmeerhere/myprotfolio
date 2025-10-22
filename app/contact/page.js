@@ -1,137 +1,204 @@
-import React from 'react'
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
 
-const contact = () => {
-
-    // Data for contact points
-    const contactPoints = [
-        {
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l1.35 7.017c.36.195.698.397 1.05.6a1 1 0 001.21-.194l4.242-4.242a1 1 0 011.414 0L17 7.586A1 1 0 0117 8.5v3.414a1 1 0 01-1.414.99L12 11.414a1 1 0 00-1.414 0L8.586 12a1 1 0 01-1.414 0L6 11.414V8.586L4.586 7A1 1 0 004 8v3.414a1 1 0 01-1.414 0L2 10.414V8.586a1 1 0 011-1h1.414l-1.414-1.414A1 1 0 002 4.5V3z" />
-                </svg>
-            ),
-            text: "+123-456-7890",
-            link: "tel:+1234567890",
-        },
-        {
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 7.777a.5.5 0 01.22.465l.775 5.5A1.5 1.5 0 006.353 15h7.294a1.5 1.5 0 001.446-1.192l.775-5.5a.5.5 0 01.22-.465A.5.5 0 0115 7.5h-5.5v-3h1.5a.5.5 0 010 1h-1.5v2h-3v-2H5a.5.5 0 010-1h1.5v-2A1.5 1.5 0 018 2.5h4A1.5 1.5 0 0113.5 4v1.5a.5.5 0 01-1 0v-1.5a.5.5 0 00-.5-.5h-4a.5.5 0 00-.5.5v2a.5.5 0 01-.5.5H5a.5.5 0 01-.668-.223z" clipRule="evenodd" />
-                </svg>
-            ),
-            text: "www.reallygreatsite.com",
-            link: "http://www.reallygreatsite.com",
-        },
-        {
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-            ),
-            text: "hello@reallygreatsite.com",
-            link: "mailto:hello@reallygreatsite.com",
-        },
-        {
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-            ),
-            text: "123 Anywhere St., Any City, ST 12345",
-            link: "#", // Address link, can be a map link if desired
-        },
-    ];
+const Contact = () => {
     return (
-        // Main container set to a dark background
-        <div className="min-h-screen text-white font-sans">
+        <div className="min-h-screen bg-black text-white font-sans overflow-hidden">
 
-            <main className="flex flex-col md:flex-row min-h-screen">
+            {/* Contact Section */}
+            <section className="flex flex-col md:flex-row min-h-screen">
 
-                {/* Left Side: Dominant Image Column */}
-                <div className="w-full md:w-1/2 relative h-96 md:h-auto bg-[#222222]">
+                {/* Left Image Panel */}
+                <div className="w-full md:w-1/2 relative h-96 md:h-auto bg-[#111]">
                     <img
-                        src="https://placehold.co/1000x1200/000000/ffffff?text=Modern+Architecture"
-                        alt="Modern angular building exterior"
-                        className="w-full h-full object-cover grayscale bg-[#222222]"
+                        src="https://placehold.co/1000x1200/0a0a0a/ffffff?text=Cyber+Tech+Structure"
+                        alt="Futuristic cyber architecture"
+                        className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition duration-700"
                     />
                 </div>
 
-                {/* Right Side: Text Content & Contact Details Column */}
+                {/* Right Contact Info */}
                 <div className="w-full md:w-1/2 bg-black p-8 md:p-16 flex flex-col justify-center">
-                    <div className="max-w-md mx-auto md:mx-0">
+                    <div className="max-w-md mx-auto md:mx-0 space-y-10">
 
-                        {/* Main Title and Underline */}
-                        <h1 className="text-6xl sm:text-7xl font-extrabold mb-4">
-                            My Contact
-                        </h1>
-                        {/* The underline element */}
-                        <div className="w-24 border-b-4 border-white mb-16"></div>
+                        {/* Header */}
+                        <motion.header
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.7 }}
+                            viewport={{ once: true }}
+                        >
+                            <h1 className="text-5xl sm:text-7xl font-extrabold mb-3 tracking-tight">
+                                Contact Me
+                            </h1>
+                            <div className="w-24 border-b-4 border-cyan-400 mb-10"></div>
+                        </motion.header>
 
-                        {/* Introductory Text */}
-                        <p className="text-base text-gray-300 leading-relaxed mb-10">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
-                        </p>
+                        {/* Description */}
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="text-gray-400 leading-relaxed"
+                        >
+                            Open for collaborations, freelance projects, and cybersecurity-focused roles.
+                            Let’s build something meaningful — whether it’s a secure web platform,
+                            scalable architecture, or an automation system that works smarter.
+                        </motion.p>
 
                         {/* Contact List */}
-                        <div className="space-y-4">
-                            {contactPoints.map((point, index) => (
-                                <div key={index} className="flex items-center space-x-3">
-                                    <a
-                                        href={point.link}
-                                        className="flex items-center space-x-3 text-white transition hover:text-gray-400"
-                                        target={point.link.startsWith('http') ? '_blank' : '_self'}
-                                        rel={point.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                    >
-                                        {/* Icon */}
-                                        <div className="text-gray-400">{point.icon}</div>
-                                        {/* Text/Link */}
-                                        <span className="text-base">{point.text}</span>
-                                    </a>
-                                </div>
-                            ))}
-                        </div>
+                        {/* Contact List */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            viewport={{ once: true }}
+                            className="space-y-5 text-gray-300"
+                        >
+                            {/* Phone */}
+                            <a
+                                href="tel:+923101576742"
+                                className="flex items-center space-x-3 hover:text-cyan-400 transition"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-cyan-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M2.3 2.3a1 1 0 011.4 0l3 3a1 1 0 01.21 1.1l-1 2a1 1 0 00.2 1.1l4.3 4.3a1 1 0 001.1.2l2-1a1 1 0 011.1.2l3 3a1 1 0 010 1.4l-1.5 1.5a2.5 2.5 0 01-2.9.5 26 26 0 01-9.7-9.7 2.5 2.5 0 01.5-2.9L2.3 2.3z" />
+                                </svg>
+                                <span>+92 310 157 6742</span>
+                            </a>
+
+                            {/* Email */}
+                            <a
+                                href="mailto:theshahmeer786@gmail.com"
+                                className="flex items-center space-x-3 hover:text-cyan-400 transition"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-cyan-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                                </svg>
+                                <span>theshahmeer786@gmail.com</span>
+                            </a>
+
+                            {/* Website */}
+                            <a
+                                href="https://shahmeershahid.vercel.app"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center space-x-3 hover:text-cyan-400 transition"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-cyan-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M12.293 2.293a1 1 0 011.414 0L19 7.586a1 1 0 010 1.414l-5.293 5.293a1 1 0 01-1.414-1.414L15.586 9H5a1 1 0 010-2h10.586l-3.293-3.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                                <span>www.shahmeershahid.vercel.app</span>
+                            </a>
+
+                            {/* LinkedIn */}
+                            <a
+                                href="https://linkedin.com/in/shahmeershahid"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center space-x-3 hover:text-cyan-400 transition"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-cyan-400" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 0h-14C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM7 19H4V9h3v10zM5.5 7.6A1.8 1.8 0 115.5 4a1.8 1.8 0 010 3.6zM20 19h-3v-5.4c0-1.29-.46-2.17-1.61-2.17-.88 0-1.41.6-1.64 1.18-.08.2-.1.48-.1.76V19h-3s.04-8.13 0-9h3v1.27c.4-.63 1.12-1.52 2.72-1.52 1.99 0 3.63 1.3 3.63 4.09V19z" />
+                                </svg>
+                                <span>linkedin.com/in/shahmeershahid</span>
+                            </a>
+
+
+                            {/* GitHub */}
+                            <a
+                                href="https://github.com/shahmeerhere"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center space-x-3 hover:text-cyan-400 transition"
+                            >
+                                <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" className="h-5 w-5 text-cyan-400" />
+                                <span>GitHub</span>
+                            </a>
+
+                            {/* Instagram */}
+                            <a
+                                href="https://instagram.com/shahmeer.shahid"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center space-x-3 hover:text-cyan-400 transition"
+                            >
+                                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" className="h-5 w-5 text-cyan-400" />
+                                <span>Instagram</span>
+                            </a>
+
+                            {/* Fiverr */}
+                            <a
+                                href="https://www.fiverr.com/shahmeerhere"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center space-x-3 hover:text-cyan-400 transition"
+                            >
+                                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Fiverr" className="h-5 w-5 text-cyan-400" />
+                                <span>Fiverr</span>
+                            </a>
+
+                            {/* Upwork */}
+                            <a
+                                href="https://www.upwork.com/freelancers/~01shahmeer"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center space-x-3 hover:text-cyan-400 transition"
+                            >
+                                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968709.png" alt="Upwork" className="h-5 w-5 text-cyan-400" />
+                                <span>Upwork</span>
+                            </a>
+
+                            {/* Address */}
+                            <div className="flex items-center space-x-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-cyan-400" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                                </svg>
+                                <span>Islamabad, Pakistan</span>
+                            </div>
+                        </motion.div>
+
                     </div>
                 </div>
-            </main>
+            </section>
 
-            <main className="flex flex-col md:flex-row min-h-screen">
-
-                {/* Left Side: Text Content Column (Approx 50% width on desktop) */}
+            {/* Thank You Section */}
+            <section className="flex flex-col md:flex-row min-h-screen">
+                {/* Text Section */}
                 <div className="w-full md:w-1/2 bg-black p-8 md:p-16 flex flex-col justify-center">
-                    <div className="max-w-xl mx-auto md:mx-0">
-
-                        {/* Main Title and Underline */}
-                        <h1 className="text-6xl sm:text-7xl font-extrabold mb-4">
+                    <motion.div
+                        className="max-w-xl mx-auto md:mx-0"
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <h1 className="text-5xl sm:text-7xl font-extrabold mb-3 tracking-tight">
                             Thank You
                         </h1>
-                        {/* The underline element */}
-                        <div className="w-24 border-b-4 border-white mb-16"></div>
-
-                        {/* Top Text Block */}
-                        <p className="text-base text-gray-300 leading-relaxed mb-10">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.
+                        <div className="w-24 border-b-4 border-cyan-400 mb-10"></div>
+                        <p className="text-gray-400 leading-relaxed mb-6">
+                            I appreciate you taking the time to explore my work. If you're seeking someone driven, creative, and deeply focused on cybersecurity and full-stack development — you’ve found the right person.
                         </p>
-
-                        {/* Bottom Text Block */}
-                        <p className="text-base text-gray-300 leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.
+                        <p className="text-gray-400 leading-relaxed">
+                            Let’s connect and build the future securely, one line of code at a time.
                         </p>
-                    </div>
+                    </motion.div>
                 </div>
 
-                {/* Right Side: Image Column (Approx 50% width on desktop) */}
-                <div className="w-full md:w-1/2 relative h-96 md:h-auto bg-[#222222]">
+                {/* Image Section */}
+                <div className="w-full md:w-1/2 relative h-96 md:h-auto bg-[#111]">
                     <img
-                        src="https://placehold.co/1000x1200/000000/ffffff?text=Beach+Landscape"
-                        alt="Beach landscape with a mountain and waves"
-                        className="w-full h-full object-cover grayscale"
+                        src="https://placehold.co/1000x1200/0a0a0a/ffffff?text=Digital+Skyline"
+                        alt="Digital skyline in futuristic tones"
+                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700"
                     />
                 </div>
-            </main>
-
+            </section>
         </div>
-    )
-}
+    );
+};
 
-export default contact
+export default Contact;

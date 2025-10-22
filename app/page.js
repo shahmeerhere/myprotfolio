@@ -26,7 +26,7 @@ export default function HomePage() {
           className="w-full md:w-1/2 relative overflow-hidden"
         >
           <motion.img
-            src="/images/adeline-palmerston.jpg"
+            src="i.png"
             alt="Portfolio Visual"
             className="w-full h-[60vh] md:h-screen object-cover opacity-90"
             whileHover={{ scale: 1.05 }}
@@ -205,7 +205,7 @@ export default function HomePage() {
             className="w-full md:w-1/2 relative rounded-2xl overflow-hidden shadow-2xl"
           >
             <motion.img
-              src="https://placehold.co/1200x800/222222/ffffff?text=Creative+Workspace"
+              src="cw.jpg"
               alt="Workspace"
               className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
               whileHover={{ scale: 1.04 }}

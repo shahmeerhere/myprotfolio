@@ -23,7 +23,7 @@ export default function Portfolio() {
       {/* HERO SECTION */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6">
         <img
-          src="p1.png"
+          src="web.jpg"
           alt="Hero background"
           className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
@@ -71,9 +71,19 @@ export default function Portfolio() {
             >
               Contact Me
             </Link>
+
+            {/* Resume Button */}
+            <a
+              href="/resume-webdev.pdf" // or /resume-cyber.pdf depending on context
+              download
+              className="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-white text-black font-semibold hover:bg-gray-200 transition"
+            >
+              Download Resume
+            </a>
           </motion.div>
         </div>
       </section>
+
 
       {/* ABOUT */}
       <section id="about" className="py-20 px-6 md:px-16 lg:px-24 bg-black">
@@ -93,7 +103,7 @@ export default function Portfolio() {
               I transform abstract ideas into{" "}
               <span className="text-white">functional</span>,{" "}
               <span className="text-white">scalable</span>, and{" "}
-              <span className="text-white">visually refined</span> digital experiences.  
+              <span className="text-white">visually refined</span> digital experiences.
               My toolkit includes <span className="text-white">React</span>,{" "}
               <span className="text-white">Next.js</span>, and{" "}
               <span className="text-white">Tailwind CSS</span> — driven by a passion for crafting seamless, human-centered interfaces that balance{" "}
@@ -110,9 +120,14 @@ export default function Portfolio() {
             viewport={{ once: true }}
             className="md:w-1/2 flex justify-center"
           >
-            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-[#1a1a1a] shadow-2xl flex items-center justify-center border border-gray-800 hover:scale-105 transition-transform duration-500 ease-out">
-              <span className="text-sm sm:text-base text-gray-400"><img src="p1.png" alt="" /></span>
+            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-[#1a1a1a] shadow-2xl overflow-hidden flex items-center justify-center hover:scale-105 transition-transform duration-500 ease-out">
+              <img
+                src="/web.jpg"
+                alt="Cover"
+                className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-110"
+              />
             </div>
+
           </motion.div>
         </div>
       </section>
