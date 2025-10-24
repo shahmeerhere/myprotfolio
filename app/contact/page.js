@@ -167,7 +167,7 @@ const Contact = () => {
                                 className="flex items-center space-x-3 hover:text-cyan-400 transition"
                             >
                                 <Image
-                                    src="https://cdn-icons-png.flaticon.com/512/5968/5968709.png"
+                                    src="/c1.png"
                                     alt="Upwork"
                                     width={20}
                                     height={20}
@@ -215,7 +215,7 @@ const Contact = () => {
                 {/* Image Section */}
                 <div className="w-full md:w-1/2 relative h-96 md:h-auto bg-[#111]">
                     <Image
-                        src="https://placehold.co/1000x1200/0a0a0a/ffffff?text=Digital+Skyline"
+                        src="/c2.png"
                         alt="Digital skyline in futuristic tones"
                         width={1000}
                         height={1200}

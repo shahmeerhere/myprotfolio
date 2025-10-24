@@ -36,15 +36,15 @@ const AboutMePage = () => {
       <section className="grid grid-cols-1 sm:grid-cols-3">
         {[
           {
-            src: "/p1.png",
+            src: "/b1.png",
             alt: "Abstract architecture",
           },
           {
-            src: "/p1.png",
+            src: "/b2.png",
             alt: "Dynamic high-angle shot",
           },
           {
-            src: "/p1.png",
+            src: "/b3.png",
             alt: "Modern building detail",
           },
         ].map((img, i) => (
@@ -127,8 +127,8 @@ const AboutMePage = () => {
           viewport={{ once: true }}
         >
           {[
-            "https://placehold.co/600x1200/000000/ffffff?text=Innovation",
-            "https://placehold.co/600x1200/222222/ffffff?text=Focus",
+            "/v1.jpg",
+            "/v2.jpg",
           ].map((src, i) => (
             <Image
               key={i}
@@ -197,28 +197,21 @@ const AboutMePage = () => {
         </motion.section>
 
         <motion.div
-          className="w-full md:w-1/2 grid grid-cols-2"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
-          {[
-            "https://placehold.co/600x600/111111/ffffff?text=Inspire",
-            "https://placehold.co/600x600/333333/ffffff?text=Create",
-            "https://placehold.co/600x600/000000/ffffff?text=Code",
-            "https://placehold.co/600x600/444444/ffffff?text=Reflect",
-          ].map((src, i) => (
-            <Image
-              key={i}
-              src={src}
-              alt="Mission imagery"
-              width={600}
-              height={600}
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700"
-            />
-          ))}
-        </motion.div>
+  className="w-full md:w-1/2"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+  viewport={{ once: true }}
+>
+  <Image
+    src="/mission.png"
+    alt="Mission imagery"
+    width={600}
+    height={600}
+    className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700"
+  />
+</motion.div>
+
       </section>
 
       {/* 👥 Team Section */}

@@ -41,7 +41,7 @@ export default function AspirantHero() {
         >
           {/* ✅ Replaced <img> with <Image> */}
           <Image
-            src="/cs.png"
+            src="/hacker.jpg"
             alt="Shahmeer Shahid — Red Hat Journey"
             width={1000}
             height={1200}
