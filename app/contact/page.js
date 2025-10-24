@@ -167,7 +167,7 @@ const Contact = () => {
                                 className="flex items-center space-x-3 hover:text-cyan-400 transition"
                             >
                                 <Image
-                                    src="/c1.png"
+                                    src="/c.png"
                                     alt="Upwork"
                                     width={20}
                                     height={20}
