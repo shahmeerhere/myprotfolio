@@ -110,7 +110,7 @@ export default function Portfolio() {
 
       {/* SERVICES / SKILLS */}
       <section id="services" className="py-20 px-6 text-center bg-gradient-to-b from-black via-gray-900/10 to-black">
-        <h2 className="text-4xl font-bold mb-12 text-white
+        <h2 className="text-4xl font-bold mb-12
                  bg-clip-text text-transparent
                  bg-gradient-to-r from-white via-gray-400 to-gray-600
                  drop-shadow-lg">
