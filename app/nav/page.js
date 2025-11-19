@@ -16,8 +16,7 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 text-sm uppercase">
           <li><Link href="/" className="hover:text-gray-400">Home</Link></li>
-          <li><Link href="/webdev" className="hover:text-gray-400">Web Development</Link></li>
-          <li><Link href="/cs" className="hover:text-gray-400">Cyber Security</Link></li>
+          <li><Link href="/webdev" className="hover:text-gray-400">DevSecOps</Link></li>
           <li><Link href="/about" className="hover:text-gray-400">About Me</Link></li>
           <li><Link href="/contact" className="hover:text-gray-400">Contact</Link></li>
         </ul>
@@ -46,8 +45,7 @@ const Navbar = () => {
           <div className="absolute top-full left-0 right-0 bg-black border-t border-gray-900 md:hidden animate-slideDown">
             <ul className="flex flex-col text-center text-sm uppercase py-4 space-y-4">
               <li><Link href="/" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400">Home</Link></li>
-              <li><Link href="/webdev" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400">Web Development</Link></li>
-              <li><Link href="/cs" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400">Cyber Security</Link></li>
+              <li><Link href="/webdev" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400">DevSecOps</Link></li>
               <li><Link href="/about" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400">About Me</Link></li>
               <li><Link href="/contact" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400">Contact</Link></li>
             </ul>

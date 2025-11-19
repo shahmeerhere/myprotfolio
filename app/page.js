@@ -3,6 +3,75 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+// --- 1. Custom SVG Icons for Tech Stack ---
+const NextIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-8 h-8 text-white">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+  </svg>
+);
+const ReactIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-8 h-8 text-blue-400">
+    <circle cx="12" cy="12" r="3" />
+    <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+  </svg>
+);
+const DockerIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-8 h-8 text-blue-500">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+  </svg>
+);
+const SecurityIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-8 h-8 text-green-400">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+  </svg>
+);
+
+// --- 2. The High-Quality "DevSecOps Visual" Replacement ---
+const DevSecOpsVisual = () => (
+  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-900 to-black rounded-2xl border border-gray-800 p-10 relative overflow-hidden group">
+    {/* Abstract Background Grid */}
+    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+    <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:30px_30px]"></div>
+    
+    {/* Central Graphic */}
+    <div className="relative z-10 flex flex-col items-center gap-6">
+      {/* Shield / Core */}
+      <motion.div 
+        initial={{ scale: 0.8, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="w-32 h-32 rounded-full bg-blue-600/20 border border-blue-500/50 flex items-center justify-center shadow-[0_0_50px_rgba(59,130,246,0.3)]"
+      >
+        <svg className="w-16 h-16 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      </motion.div>
+
+      {/* Connection Lines */}
+      <div className="flex gap-8">
+        <motion.div 
+           initial={{ y: 20, opacity: 0 }}
+           whileInView={{ y: 0, opacity: 1 }}
+           transition={{ delay: 0.2 }}
+           className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700 text-xs text-gray-300 font-mono flex items-center gap-2"
+        >
+          <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          CI/CD Active
+        </motion.div>
+        <motion.div 
+           initial={{ y: 20, opacity: 0 }}
+           whileInView={{ y: 0, opacity: 1 }}
+           transition={{ delay: 0.4 }}
+           className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700 text-xs text-gray-300 font-mono flex items-center gap-2"
+        >
+          <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+          Dockerized
+        </motion.div>
+      </div>
+    </div>
+  </div>
+);
+
 export default function HomePage() {
   // Animation variants
   const fadeInUp = {
@@ -15,10 +84,18 @@ export default function HomePage() {
     visible: { opacity: 1, transition: { duration: 1.2, ease: "easeOut" } },
   };
 
+  const techStack = [
+    { name: "Next.js", icon: <NextIcon />, desc: "Full Stack React" },
+    { name: "Docker", icon: <DockerIcon />, desc: "Containerization" },
+    { name: "Security", icon: <SecurityIcon />, desc: "Snyk & OWASP" },
+    { name: "React", icon: <ReactIcon />, desc: "UI Components" },
+  ];
+
   return (
-    <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden selection:bg-blue-500/30">
       {/* === HERO SECTION === */}
-      <section className="flex flex-col md:flex-row items-center justify-center min-h-screen pt-24 md:pt-0">
+      <section className="flex flex-col md:flex-row items-center justify-center min-h-screen pt-24 md:pt-0 relative">
+        
         {/* Left Side - Image */}
         <motion.figure
           initial={{ opacity: 0, x: -80 }}
@@ -27,16 +104,18 @@ export default function HomePage() {
           className="w-full md:w-1/2 relative overflow-hidden"
         >
           <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.8 }}>
+            {/* Replace with your image /i.png */}
             <Image
               src="/i.png"
-              alt="Portfolio Visual"
+              alt="Shahmeer Shahid"
               width={1000}
               height={1000}
-              className="w-full h-[60vh] md:h-screen object-cover opacity-90"
+              className="w-full h-[60vh] md:h-screen object-cover opacity-90 grayscale hover:grayscale-0 transition-all duration-700"
               priority
             />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/90 md:hidden"></div>
         </motion.figure>
 
         {/* Right Side - Text */}
@@ -44,26 +123,26 @@ export default function HomePage() {
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
-          className="w-full md:w-1/2 p-8 sm:p-10 md:p-16 flex flex-col justify-center text-center md:text-left"
+          className="w-full md:w-1/2 p-8 sm:p-10 md:p-16 flex flex-col justify-center text-center md:text-left z-10"
         >
-          <div className="max-w-xl mx-auto md:mx-0 space-y-6">
+          <div className="max-w-xl mx-auto md:mx-0 space-y-8">
             {/* Headings */}
             <motion.div
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
-              className="w-full flex justify-start"
+              className="w-full flex flex-col justify-start"
             >
-              <div>
-                <h1 className="text-left leading-tight font-extrabold text-white text-5xl sm:text-6xl md:text-7xl">
-                  My
+              <h1 className="text-left leading-tight font-extrabold text-white text-5xl sm:text-6xl md:text-7xl tracking-tight">
+                Building Fast
+              </h1>
+              <h1 className="text-left font-extrabold text-gray-500 text-5xl sm:text-6xl md:text-7xl tracking-tight">
+                Web Apps,
+              </h1>
+              <div className="pt-2">
+                 <h1 className="text-left font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-white to-gray-400 text-4xl sm:text-5xl md:text-6xl">
+                  Secured by Design.
                 </h1>
-                <div className="flex items-center gap-4">
-                  <h1 className="text-left font-extrabold text-white text-5xl sm:text-6xl md:text-7xl">
-                    Portfolio
-                  </h1>
-                  <span className="hidden sm:block h-[2px] w-16 bg-gray-400"></span>
-                </div>
               </div>
             </motion.div>
 
@@ -73,10 +152,10 @@ export default function HomePage() {
               initial="hidden"
               animate="visible"
               transition={{ delay: 0.8 }}
-              className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-md mx-auto md:mx-0"
+              className="text-gray-400 text-sm sm:text-lg leading-relaxed max-w-md mx-auto md:mx-0"
             >
-              Crafting sleek, high-performance digital products that fuse design, functionality,
-              and innovation built to inspire and perform.
+              I am a <strong>Frontend Developer & DevSecOps Advocate</strong>. I bridge the gap
+              between rapid product delivery (Next.js) and security best practices (CI/CD, OWASP).
             </motion.p>
 
             {/* Action Buttons */}
@@ -87,39 +166,24 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 sm:gap-6 pt-4"
             >
               <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  backgroundColor: "#e5e5e5",
-                  color: "#000",
-                }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="bg-white text-black font-semibold py-3 px-8 text-sm uppercase rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-white/20"
+                whileHover={{ scale: 1.05, backgroundColor: "#fff", color: "#000" }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-black font-bold py-4 px-10 text-sm uppercase rounded-full transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]"
               >
-                Explore Now
+                Explore Projects
               </motion.button>
 
               <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3 }}
-                className="flex items-center text-white cursor-pointer group"
+                whileHover={{ scale: 1.1, x: 5 }}
+                className="flex items-center text-white cursor-pointer group gap-3"
               >
-                <div className="h-10 w-10 flex items-center justify-center border border-white rounded-full transition duration-300 group-hover:bg-white group-hover:text-black">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-                      clipRule="evenodd"
-                    />
+                <div className="h-12 w-12 flex items-center justify-center border border-white/30 rounded-full transition duration-300 group-hover:bg-white group-hover:text-black group-hover:border-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 fill-current" viewBox="0 0 20 20">
+                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
                   </svg>
                 </div>
-                <span className="text-sm uppercase tracking-wider ml-2">
-                  Play Video
+                <span className="text-sm font-semibold uppercase tracking-widest text-gray-300 group-hover:text-white transition-colors">
+                  Intro Video
                 </span>
               </motion.div>
             </motion.div>
@@ -127,99 +191,89 @@ export default function HomePage() {
         </motion.article>
       </section>
 
-      {/* === INTRODUCTION SECTION === */}
+      {/* === FEATURE HIGHLIGHT (THE HOOK) === */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="w-full border-y border-white/10 bg-neutral-900/50 backdrop-blur-sm py-8"
+      >
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-4 text-center md:text-left">
+          <div className="p-3 bg-blue-500/10 rounded-full text-blue-400">
+             <SecurityIcon />
+          </div>
+          <div>
+            <p className="text-gray-400 text-sm font-mono uppercase tracking-wider mb-1">Current Focus</p>
+            <p className="text-white text-lg font-medium">
+              Built a self-healing <span className="text-blue-400">CI/CD pipeline</span> that automatically blocks deployments if high-severity vulnerabilities are detected.
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* === MISSION SECTION === */}
       <motion.section
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="py-20 md:py-28 border-t border-gray-900"
+        className="py-24 md:py-32 relative"
       >
-        <main className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row gap-12 md:gap-16 items-center">
-          {/* Left Text */}
+        <main className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row gap-16 items-center">
+          
+          {/* Left Text Area */}
           <motion.article
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="w-full md:w-1/2 text-center md:text-left space-y-10"
+            className="w-full md:w-1/2 space-y-12"
           >
-            <header>
-              <motion.h2
-                whileHover={{ letterSpacing: "0.05em" }}
-                transition={{ duration: 0.3 }}
-                className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-3"
-              >
-                Introduction
+            <div>
+              <motion.h2 className="text-4xl sm:text-5xl font-extrabold mb-6">
+                The Mission
               </motion.h2>
-              <motion.div
-                className="w-20 mx-auto md:mx-0 border-b-4 border-white"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                transition={{ duration: 0.8 }}
-              />
-            </header>
+              <div className="h-1 w-24 bg-blue-500 mb-8"></div>
+              <p className="text-xl text-gray-300 leading-relaxed">
+                I don't just write code; I ship secure products. 
+                Most developers build features and worry about security later. 
+                I believe in <span className="text-white font-bold border-b border-blue-500">"Shifting Left"</span>—integrating security from the first line of code.
+              </p>
+            </div>
 
-            <motion.p
-              className="text-gray-300 text-base leading-relaxed max-w-lg mx-auto md:mx-0"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              I am Shahmeer Shahid, a tech-driven creator obsessed with building, breaking, and
-              securing the web. I design digital systems that don’t just work — they evolve with the
-              future.
-            </motion.p>
-
-            {/* Info Blocks */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-gray-700/50">
-              {[
-                {
-                  title: "About Me",
-                  text: "Curious, analytical, and future-driven — blending creativity with code to craft seamless experiences and secure systems.",
-                },
-                {
-                  title: "About Portfolio",
-                  text: "A showcase of design precision and functional logic, capturing both creative energy and performance excellence.",
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.2, duration: 0.8 }}
-                  className="hover:translate-y-[-4px] hover:scale-[1.02] transition-all duration-500"
-                >
-                  <h3 className="text-lg sm:text-xl font-semibold mb-3 text-white">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
-                    {item.text}
-                  </p>
-                </motion.div>
-              ))}
+            {/* Tech Stack Grid (Replaces "About Portfolio") */}
+            <div>
+               <h3 className="text-gray-500 uppercase tracking-widest text-sm font-bold mb-6">Core Technologies</h3>
+               <div className="grid grid-cols-2 gap-4">
+                  {techStack.map((tech, i) => (
+                    <motion.div 
+                      key={i}
+                      whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.05)" }}
+                      className="flex items-center gap-4 p-4 rounded-xl border border-white/10 bg-white/5 transition-colors"
+                    >
+                      {tech.icon}
+                      <div>
+                        <p className="font-bold text-white">{tech.name}</p>
+                        <p className="text-xs text-gray-500">{tech.desc}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+               </div>
             </div>
           </motion.article>
 
-          {/* Right Image */}
+          {/* Right Side - The New High Quality Visual */}
           <motion.figure
-            whileInView={{ opacity: 1, scale: 1 }}
             initial={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="w-full md:w-1/2 relative rounded-2xl overflow-hidden shadow-2xl"
+            className="w-full md:w-1/2 h-[400px] md:h-[500px]"
           >
-            <motion.div whileHover={{ scale: 1.04 }} transition={{ duration: 0.6 }}>
-              <Image
-                src="/cw.jpg"
-                alt="Workspace"
-                width={1000}
-                height={800}
-                className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
-              />
-            </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+            {/* This replaces the old /cw.jpg image with a scalable React Component */}
+            <DevSecOpsVisual />
           </motion.figure>
+
         </main>
       </motion.section>
     </div>

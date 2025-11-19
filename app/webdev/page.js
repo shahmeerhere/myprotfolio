@@ -4,98 +4,173 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   FaLaptopCode,
-  FaServer,
-  FaDatabase,
   FaEnvelope,
   FaReact,
-  FaNodeJs,
   FaGitAlt,
-  FaAws
+  FaAws,
+  FaLinux,
+  FaShieldAlt,
 } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
+import { SiTailwindcss, SiKubernetes } from "react-icons/si"; 
 
-
+// Assuming Dashboard is available in the current context
 import Dashboard from "./dasboard/page";
 
-export default function Portfolio() {
+// Motion Variants for smooth entrance
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
+export default function DevSecOpsPortfolio() {
   const projects = [
-    { image: "/p9.png", title: "Food Genie", description: "AI-Driven Recipe Generator. Integrated OpenAI API to generate custom recipes based on user ingredients, utilizing Supabase for user preferences and Next.js for zero-latency rendering", url: "https://foodgenie-five.vercel.app/" },
-    { image: "/p7.png", title: "Morva", description: "Scalable E-Commerce Shoe Store with seamless UX.", url: "https://shoestore-9yb9.vercel.app/" },
-    { image: "/p8.png", title: "Just Me", description: "Access your personal vault anytime, anywhere.", url: "https://justme-ashy.vercel.app/" },
-    { image: "/p5.png", title: "Cars Vault", description: "Elegant car showroom app with modern design.", url: "https://carsvault.vercel.app/" },
-    { image: "/p1.png", title: "Pak Tourism", description: "Explore beautiful destinations across Pakistan.", url: "https://paktourism.vercel.app/" },
-    { image: "/p2.png", title: "Timetable Generator", description: "Smart timetable generator for students.", url: "https://timetablegenerator-iota.vercel.app" },
-    { image: "/p3.png", title: "Weather App", description: "Real-time weather tracking app powered by OpenWeather API.", url: "https://weatherapp-nine-blond.vercel.app" },
-    { image: "/p6.png", title: "iTask", description: "A simple React.js app to manage daily tasks.", url: "https://todolist-eight-tau-49.vercel.app/" },
+    {
+      image: "/p9.png",
+      title: "Food Genie (Secure API)",
+      description: "AI-Driven Recipe Generator. Integrated OpenAI API while implementing **Input Validation and Rate Limiting** to prevent API abuse and ensure data integrity. Built with Next.js/Supabase.",
+      url: "https://foodgenie-five.vercel.app/",
+    },
+    {
+      image: "/p7.png",
+      title: "Morva (E-Commerce UX)",
+      description: "Scalable E-Commerce Store with seamless UX. Designed for high performance and **PCI DSS minimal compliance** via external payment gateways and secure state management.",
+      url: "https://shoestore-9yb9.vercel.app/",
+    },
+    {
+      image: "/p8.png",
+      title: "Just Me (Data Vault)",
+      description: "Personal Data Vault featuring **Role-Based Access Control (RBAC)** and secure, encrypted storage. Focus on robust authentication flows (OAuth) and authorization checks.",
+      url: "https://justme-ashy.vercel.app/",
+    },
+    {
+      image: "/p2.png",
+      title: "Smart Scheduler (Logic & Resilience)",
+      description: "A logic-heavy application utilizing **conflict-detection algorithms** for scheduling. Secured the backend endpoints against injection and ensures data resilience.",
+      url: "https://timetablegenerator-iota.vercel.app",
+    },
+    {
+      image: "/p5.png",
+      title: "Cars Vault",
+      description: "Elegant car showroom app with modern design.",
+      url: "https://carsvault.vercel.app/",
+    },
+    {
+      image: "/p1.png",
+      title: "Pak Tourism",
+      description: "Explore beautiful destinations across Pakistan.",
+      url: "https://paktourism.vercel.app/",
+    },
+    {
+      image: "/p3.png",
+      title: "Weather App",
+      description: "Real-time weather tracking app powered by OpenWeather API.",
+      url: "https://weatherapp-nine-blond.vercel.app"
+    },
+    {
+      image: "/p6.png",
+      title: "iTask",
+      description: "A simple React.js app to manage daily tasks.",
+      url: "https://todolist-eight-tau-49.vercel.app/"
+    },
   ];
-  const services = [
-    { title: "Frontend Development", desc: "Crafting sleek UIs with React, Next.js & Tailwind CSS.", icon: <FaLaptopCode /> },
-    { title: "Backend Development", desc: "Building secure APIs and data-driven logic for performance.", icon: <FaServer /> },
-    { title: "Full-Stack Projects", desc: "Delivering complete, scalable solutions from concept to deployment.", icon: <FaDatabase /> },
+
+  // Data for the DevSecOps Pipeline section
+  const pipelineSteps = [
+    { title: "Secure Frontend (DEV)", desc: "Crafting zero-vulnerability UIs using Next.js, React, and strict dependency scanning (SAST) on the client side.", icon: <FaReact />, color: "#38bdf8" },
+    { title: "API Resilience (SEC)", desc: "Building secure, high-throughput APIs (Node.js/Supabase) with input sanitization, rate limiting, and OWASP mitigation.", icon: <FaShieldAlt />, color: "#E34A30" },
+    { title: "Containerization (OPS)", desc: "Deploying applications with Docker and Kubernetes for consistent, scalable, and isolated production environments.", icon: <SiKubernetes />, color: "#3069c5" },
+    { title: "Hardened OS & Net (SEC)", desc: "Experience with Linux hardening, network configuration, virtual machines, and Red Hat preparation.", icon: <FaLinux />, color: "#ff9900" },
+    { title: "Automated CI/CD (OPS)", desc: "Using Git & GitHub Actions to enforce code quality, run automated tests, and block deployments upon critical vulnerability detection.", icon: <FaGitAlt />, color: "#F1502F" },
+    { title: "Cloud & Monitoring (OPS)", desc: "Cloud deployment on AWS/Vercel with focused monitoring for runtime errors, performance, and security events.", icon: <FaAws />, color: "#2E7D32" },
   ];
 
   return (
     <div className="min-h-screen bg-black text-gray-200 overflow-x-hidden">
-
-      {/* HERO SECTION */}
+      
+      {/* === 1. DEVSECOPS HERO SECTION === */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center text-center px-6">
         <div className="absolute inset-0">
           <Image
-            src="/web.jpg"
-            alt="Hero background"
+            src="/hacker.jpg"
+            alt="DevSecOps systems background"
             fill
-            className="object-cover opacity-70"
+            className="object-cover opacity-60"
             priority
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
 
-        <div className="relative z-10 max-w-3xl">
+        <div className="relative z-10 max-w-4xl">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-cyan-400 font-light text-xl md:text-2xl mb-3 tracking-widest uppercase"
+          >
+            DevSecOps | Product Engineering
+          </motion.h2>
+
           <motion.h1
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
             className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight text-white relative overflow-hidden"
           >
-            Hey, I’m{" "}
+            Building Resilient Applications,
             <span
-              className="bg-gradient-to-r from-white via-gray-300 to-gray-400 text-transparent bg-clip-text animate-gradient-x"
-              style={{ textShadow: '0 0 4px rgba(255,255,255,0.4), 0 0 8px rgba(255,255,255,0.2)' }}
+              className="block bg-gradient-to-r from-blue-300 via-white to-gray-200 text-transparent bg-clip-text animate-gradient-x mt-2"
+              // ENHANCEMENT: Stronger shadow for better text lift
+              style={{ textShadow: '0 0 6px rgba(59,130,246,0.7), 0 0 12px rgba(255,255,255,0.4)' }}
             >
-              Shahmeer
+              Secured by Design
             </span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
             className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            A forward-thinking <span className="text-white font-semibold">CS student</span> crafting innovative digital experiences through <span className="text-gray-300">web development, cybersecurity,</span> and <span className="text-gray-300">future tech.</span>
+            I integrate <b>security testing (SAST/DAST)</b> directly into CI/CD to eliminate vulnerabilities while delivering <b>high-performance Next.js</b> experiences.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
+            transition={{ delay: 1, duration: 0.6 }}
             className="flex flex-wrap justify-center gap-6"
           >
             {[
-              { label: "View Projects", href: "#projects" },
-              { label: "Contact Me", href: "#contact" },
-              { label: "Download Resume", href: "/resume-webdev.pdf", download: true },
+              { label: "View Secure Projects", href: "#projects" },
+              { label: "Pipeline & Methodology", href: "#services" },
+              { label: "Download Resume", href: "/resume-devsecops.pdf", download: true },
             ].map((btn, idx) => (
               <Link
                 key={idx}
                 href={btn.href}
                 download={btn.download || false}
-                className="relative w-full sm:w-auto px-8 py-3 rounded-xl
-                     bg-white/20 backdrop-blur-md border border-white/30
-                     font-semibold text-transparent bg-clip-text
-                     bg-gradient-to-r from-white via-gray-400 to-gray-500
-                     hover:scale-105 hover:shadow-lg hover:text-white transition-all duration-300"
-                style={{ textShadow: '0 0 3px rgba(255,255,255,0.3)' }}
+                className={`relative w-full sm:w-auto px-8 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    idx === 0
+                      ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]' 
+                      : 'bg-white/10 backdrop-blur-sm border border-white/20 text-gray-300 hover:bg-white/20' 
+                  }`}
               >
                 {btn.label}
               </Link>
@@ -104,57 +179,76 @@ export default function Portfolio() {
         </div>
       </section>
 
-
-      {/* SERVICES / SKILLS */}
-      <section id="services" className="py-20 px-6 text-center bg-gradient-to-b from-black via-gray-900/10 to-black">
-        <h2 className="text-4xl font-bold mb-12
-                 bg-clip-text text-transparent
-                 bg-gradient-to-r from-white via-gray-400 to-gray-600
-                 drop-shadow-lg">
-          What I Do
-        </h2>
+      <hr className="border-gray-800" />
+      
+      {/* --- 2. THE DEVSECOPS PIPELINE (MERGED SERVICES/SKILLS) --- */}
+      <motion.section 
+        id="services" 
+        className="py-20 px-6 text-center bg-black"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
+        <motion.h2 
+          variants={itemVariants} 
+          className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-400 to-blue-500 drop-shadow-lg"
+        >
+          The DevSecOps Pipeline
+        </motion.h2>
+        <motion.p 
+          variants={itemVariants} 
+          className="text-gray-500 max-w-3xl mx-auto mb-12"
+        >
+          Merging rapid development with robust security and automated operations (CI/CD, Infrastructure).
+        </motion.p>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {[
-            { title: "Frontend Development", desc: "React, Next.js, Tailwind CSS - sleek, interactive, responsive UI.", icon: <FaReact />, color: "#61dafb" },
-            { title: "Backend & APIs", desc: "Node.js, Firebase, Supabase - secure and scalable server logic.", icon: <FaNodeJs />, color: "#3c873a" },
-            { title: "Database Management", desc: "MongoDB, MySQL, PostgreSQL - efficient, structured, and NoSQL solutions.", icon: <FaDatabase />, color: "#f0db4f" },
-            { title: "Cloud & DevOps", desc: "Docker, Kubernetes, AWS, Linux - modern deployment & container orchestration.", icon: <FaAws />, color: "#ff9900" },
-            { title: "Version Control & CI/CD", desc: "Git, Vercel - collaborative, automated deployment pipelines.", icon: <FaGitAlt />, color: "#f1502f" },
-            { title: "UI Enhancements", desc: "Shadcn/UI, Tailwind components - reusable, visually consistent design.", icon: <SiTailwindcss />, color: "#38bdf8" },
-          ].map((s, idx) => (
+          {pipelineSteps.map((s, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ scale: 1.06, y: -6, boxShadow: `0 0 20px ${s.color}/50` }}
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -4, boxShadow: `0 0 20px ${s.color}/40` }}
               className="relative p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/20
-                   hover:border-white/40 transition-all duration-300 cursor-pointer"
+                    hover:border-cyan-400 transition-all duration-300 cursor-pointer"
             >
-              <div
+              <motion.div
                 className="flex items-center justify-center mb-6 rounded-full w-20 h-20 mx-auto"
                 style={{
                   color: s.color,
                   fontSize: "3rem",
-                  textShadow: `0 0 10px ${s.color}, 0 0 20px ${s.color}/40, 0 0 30px ${s.color}/20`,
+                  textShadow: `0 0 10px ${s.color}, 0 0 20px ${s.color}/40`,
                 }}
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               >
                 {s.icon}
-              </div>
+              </motion.div>
               <h3 className="text-xl font-semibold mb-3 text-white">{s.title}</h3>
               <p className="text-gray-400 text-sm leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
         </div>
-      </section>
+        {/* Visual reinforcement of the DevSecOps cycle */}
+        <motion.div 
+          variants={itemVariants} 
+          className="mt-16 max-w-4xl mx-auto p-4 bg-zinc-900 rounded-xl border border-gray-700"
+        >
+          <p className="text-gray-400 mb-4 text-sm">Visualizing the Continuous DevSecOps Flow:</p></motion.div>
+      </motion.section>
 
+      <hr className="border-gray-800" />
 
-      {/* DASHBOARD / TOOLS */}
+      {/* --- 3. DASHBOARD / TOOLS (Keeping this component) --- */}
       <section className="py-20 px-6">
         <Dashboard />
       </section>
 
-      {/* PROJECTS */}
+      <hr className="border-gray-800" />
+      
+      {/* --- 4. SECURE PROJECTS (Enhanced Interactions) --- */}
       <section id="projects" className="py-20 px-6">
-        <h2 className="text-4xl font-bold mb-12 text-center text-white">My Projects</h2>
+        <h2 className="text-4xl font-bold mb-12 text-center text-white">Featured Secure Projects</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {projects.map((item, idx) => (
             <motion.a
@@ -162,16 +256,39 @@ export default function Portfolio() {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
+              // Parent hover animation
               whileHover={{ scale: 1.04, y: -6 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}
-              className="group relative rounded-2xl overflow-hidden shadow-lg border border-gray-800 hover:shadow-white/20 transition-all duration-300"
+              className="group relative rounded-2xl overflow-hidden shadow-lg border border-gray-800 hover:shadow-cyan-500/20 transition-all duration-300"
             >
               <div className="relative h-64">
-                <Image src={item.image} alt={item.title} fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 z-10">
-                  <h3 className="text-xl font-bold text-white">{item.title}</h3>
-                  <p className="text-sm text-gray-300 mt-2 opacity-0 group-hover:opacity-100 transition-all">{item.description}</p>
+                <Image 
+                  src={item.image} 
+                  alt={item.title} 
+                  fill 
+                  className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-100 filter brightness-75" 
+                />
+                
+                {/* Overlay for Title and Hover Description */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 flex flex-col justify-end">
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  
+                  {/* FIX APPLIED HERE: Using direct initial/variants to correctly listen to parent's 'hover' state */}
+                  <motion.div
+                    className="overflow-hidden"
+                    variants={{
+                      rest: { height: 0, opacity: 0, transition: { duration: 0.2 } },
+                      hover: { height: "auto", opacity: 1, transition: { duration: 0.3 } },
+                    }}
+                    // The parent's hover state is implicitly passed down as 'hover'
+                    whileHover="hover" 
+                    initial="rest" // Start in the rest state
+                  >
+                    <p className="text-sm text-cyan-400 leading-relaxed pt-2 border-t border-cyan-800">
+                      {item.description}
+                    </p>
+                  </motion.div>
+                  
                 </div>
               </div>
             </motion.a>
@@ -179,49 +296,75 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ABOUT ME */}
-      <section id="about" className="py-20 px-6 md:px-16 lg:px-24 bg-black">
+      <hr className="border-gray-800" />
+
+      {/* --- 5. ABOUT ME (Unified DevSecOps Mission) --- */}
+      <motion.section 
+        id="about" 
+        className="py-20 px-6 md:px-16 lg:px-24 bg-black"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           {/* Text Section */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            variants={itemVariants}
             className="md:w-1/2 text-center md:text-left"
           >
-            <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 text-white">About Me</h2>
+            <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 text-white">My Mission</h2>
             <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-              Frontend Developer with a Security-First Mindset. I build responsive web apps using Next.js and AI tools, with a focus on secure authentication flows (OAuth), data protection, and clean architecture. Transitioning into Cyber Security.
+              My core mission is to bridge the gap between <b>rapid software development (Dev)</b> and <b>enterprise-level security (Sec)</b>. I don't see security as a checklist item; I see it as a <b>feature</b> of high-quality engineering.
+              <br /><br />
+              I combine my experience in <b>Full-Stack Next.js</b> with hands-on knowledge of <b>Linux, network hardening, and vulnerability mitigation</b> to deliver resilient, reliable, and production-ready applications. My focus is always on efficiency, performance, and <b>secure code culture</b>.
             </p>
           </motion.div>
 
-          {/* Image Section */}
+          {/* Image Section (Using the CS image for visual branding consistency) */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            variants={itemVariants}
             transition={{ delay: 0.3, duration: 0.8 }}
-            viewport={{ once: true }}
             className="md:w-1/2 flex justify-center"
           >
-            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-[#1a1a1a] shadow-2xl overflow-hidden flex items-center justify-center hover:scale-105 transition-transform duration-500 ease-out relative">
-              <Image src="/web.jpg" alt="Cover" fill className="object-cover object-center transition-transform duration-700 hover:scale-110" />
+            <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl overflow-hidden flex items-center justify-center hover:scale-105 transition-transform duration-500 ease-out relative">
+              <Image 
+                src="/v1.jpg" 
+                alt="" 
+                fill 
+                className="object-cover object-center transition-transform duration-700 hover:scale-110" 
+              />
             </div>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* CONTACT */}
+      <hr className="border-gray-800" />
+
+      {/* --- 6. CONTACT --- */}
       <section id="contact" className="py-20 px-6 text-center">
-        <h2 className="text-4xl font-bold mb-6 text-white">Let’s Connect</h2>
-        <p className="text-lg text-gray-400 mb-8">Have a project or idea? Let’s make it real.</p>
+        <h2 className="text-4xl font-bold mb-6 text-white">Let’s Collaborate on Resilience</h2>
+        <p className="text-lg text-gray-400 mb-8">Ready to build secure, scalable solutions? Reach out.</p>
         <div className="flex flex-wrap justify-center gap-8 text-lg">
-          <Link href="https://github.com/shahmeerhere" className="flex items-center gap-2 hover:text-white transition"><FaLaptopCode /> GitHub</Link>
-          <Link href="https://linkedin.com/in/shahmeershahid" className="flex items-center gap-2 hover:text-white transition">LinkedIn</Link>
-          <Link href="mailto:theshahmeer786@gmail.com" className="flex items-center gap-2 hover:text-white transition"><FaEnvelope /> Email</Link>
+          <Link href="https://github.com/shahmeerhere" className="flex items-center gap-2 hover:text-cyan-400 transition">
+            <FaLaptopCode /> GitHub (Code)
+          </Link>
+          <Link href="https://linkedin.com/in/shahmeershahid" className="flex items-center gap-2 hover:text-cyan-400 transition">
+            LinkedIn
+          </Link>
+          <Link href="mailto:theshahmeer786@gmail.com" className="flex items-center gap-2 hover:text-cyan-400 transition">
+            <FaEnvelope /> Email
+          </Link>
+          <Link href="/resume-devsecops.pdf" download className="flex items-center gap-2 text-red-500 hover:text-red-400 transition">
+            <FaShieldAlt /> DevSecOps Resume
+          </Link>
         </div>
       </section>
-
+      
+      {/* FOOTER NOTE */}
+      <div className="fixed bottom-4 right-4 text-xs text-gray-500 hidden md:block z-10">
+        Theme | DevSecOps Mode ⚡
+      </div>
     </div>
   );
 }
