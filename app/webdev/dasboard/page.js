@@ -36,7 +36,6 @@ const allTools = [
     { name: "MySQL", icon: <SiMysql />, color: "#00758f", category: "Database", url: "https://www.mysql.com/" },
     { name: "PostgreSQL", icon: <SiPostgresql />, color: "#336791", category: "Database", url: "https://www.postgresql.org/" },
     { name: "Docker", icon: <FaDocker />, color: "#0db7ed", category: "DevOps", url: "https://www.docker.com/" },
-    { name: "Kubernetes", icon: <SiKubernetes />, color: "#326ce5", category: "DevOps", url: "https://kubernetes.io/" },
     { name: "Git", icon: <FaGitAlt />, color: "#f1502f", category: "DevOps", url: "https://git-scm.com/" },
     { name: "Vercel", icon: <SiVercel />, color: "#cccccc", category: "Cloud", url: "https://vercel.com/" },
     { name: "AWS", icon: <FaAws />, color: "#ff9900", category: "Cloud", url: "https://aws.amazon.com/" },

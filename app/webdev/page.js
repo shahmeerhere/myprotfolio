@@ -2,25 +2,24 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  FaLaptopCode, 
-  FaServer, 
-  FaDatabase, 
-  FaEnvelope, 
-  FaReact, 
-  FaNodeJs,  
-  FaGitAlt, 
+import {
+  FaLaptopCode,
+  FaServer,
+  FaDatabase,
+  FaEnvelope,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
   FaAws
 } from "react-icons/fa";
-import {SiTailwindcss} from "react-icons/si";
+import { SiTailwindcss } from "react-icons/si";
 
 
 import Dashboard from "./dasboard/page";
 
 export default function Portfolio() {
   const projects = [
-    { image: "/cw.jpg", title: "Instagram Clone", description: "Full-stack clone with auth, posts, responsive UI.", url: "https://minegram-tawny.vercel.app/" },
-    { image: "/p9.png", title: "Food Genie", description: "AI powered food app with database and responsive UI.", url: "https://foodgenie-five.vercel.app/" },
+    { image: "/p9.png", title: "Food Genie", description: "AI-Driven Recipe Generator. Integrated OpenAI API to generate custom recipes based on user ingredients, utilizing Supabase for user preferences and Next.js for zero-latency rendering", url: "https://foodgenie-five.vercel.app/" },
     { image: "/p7.png", title: "Morva", description: "Scalable E-Commerce Shoe Store with seamless UX.", url: "https://shoestore-9yb9.vercel.app/" },
     { image: "/p8.png", title: "Just Me", description: "Access your personal vault anytime, anywhere.", url: "https://justme-ashy.vercel.app/" },
     { image: "/p5.png", title: "Cars Vault", description: "Elegant car showroom app with modern design.", url: "https://carsvault.vercel.app/" },
@@ -28,9 +27,7 @@ export default function Portfolio() {
     { image: "/p2.png", title: "Timetable Generator", description: "Smart timetable generator for students.", url: "https://timetablegenerator-iota.vercel.app" },
     { image: "/p3.png", title: "Weather App", description: "Real-time weather tracking app powered by OpenWeather API.", url: "https://weatherapp-nine-blond.vercel.app" },
     { image: "/p6.png", title: "iTask", description: "A simple React.js app to manage daily tasks.", url: "https://todolist-eight-tau-49.vercel.app/" },
-    { image: "/p4.png", title: "Tic Tac Toe", description: "Fun, responsive multiplayer Tic Tac Toe game.", url: "https://tictactoe-tau-rose.vercel.app" },
   ];
-
   const services = [
     { title: "Frontend Development", desc: "Crafting sleek UIs with React, Next.js & Tailwind CSS.", icon: <FaLaptopCode /> },
     { title: "Backend Development", desc: "Building secure APIs and data-driven logic for performance.", icon: <FaServer /> },
@@ -195,8 +192,7 @@ export default function Portfolio() {
           >
             <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 text-white">About Me</h2>
             <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-              I transform abstract ideas into <span className="text-white">functional</span>, <span className="text-white">scalable</span>, and <span className="text-white">visually refined</span> digital experiences.
-              My toolkit includes <span className="text-white">React</span>, <span className="text-white">Next.js</span>, and <span className="text-white">Tailwind CSS</span> — driven by a passion for crafting seamless, human-centered interfaces that balance <span className="text-white">aesthetics</span> and <span className="text-white">performance</span>.
+              Frontend Developer with a Security-First Mindset. I build responsive web apps using Next.js and AI tools, with a focus on secure authentication flows (OAuth), data protection, and clean architecture. Transitioning into Cyber Security.
             </p>
           </motion.div>
 
