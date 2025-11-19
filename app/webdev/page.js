@@ -315,7 +315,7 @@ export default function DevSecOpsPortfolio() {
           >
             <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 text-white">My Mission</h2>
             <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-              My core mission is to bridge the gap between <b>rapid software development (Dev)</b> and <b>enterprise-level security (Sec)</b>. I don't see security as a checklist item; I see it as a <b>feature</b> of high-quality engineering.
+              My core mission is to bridge the gap between <b>rapid software development (Dev)</b> and <b>enterprise-level security (Sec)</b>. I don&apos;t see security as a checklist item; I see it as a <b>feature</b> of high-quality engineering.
               <br /><br />
               I combine my experience in <b>Full-Stack Next.js</b> with hands-on knowledge of <b>Linux, network hardening, and vulnerability mitigation</b> to deliver resilient, reliable, and production-ready applications. My focus is always on efficiency, performance, and <b>secure code culture</b>.
             </p>

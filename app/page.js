@@ -235,9 +235,9 @@ export default function HomePage() {
               </motion.h2>
               <div className="h-1 w-24 bg-blue-500 mb-8"></div>
               <p className="text-xl text-gray-300 leading-relaxed">
-                I don't just write code; I ship secure products. 
+                I Don&apos;t just write code; I ship secure products. 
                 Most developers build features and worry about security later. 
-                I believe in <span className="text-white font-bold border-b border-blue-500">"Shifting Left"</span>—integrating security from the first line of code.
+                I believe in <span className="text-white font-bold border-b border-blue-500">&quot;Shifting Left&quot;</span>—integrating security from the first line of code.
               </p>
             </div>
 
