@@ -76,15 +76,7 @@ const Contact = () => {
               viewport={{ once: true }}
               className="space-y-5 text-gray-300"
             >
-              {/* PHONE */}
-              <a
-                href="tel:+923101576742"
-                className="flex items-center space-x-3 hover:opacity-80 transition"
-              >
-                <FaPhone className="text-cyan-400" />
-                <span className="text-cyan-400">+92 310 157 6742</span>
-              </a>
-
+              
               {/* EMAIL */}
               <a
                 href="mailto:theshahmeer786@gmail.com"

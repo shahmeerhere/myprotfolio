@@ -110,7 +110,7 @@ export default function HomePage() {
               alt="Shahmeer Shahid"
               width={1000}
               height={1000}
-              className="w-full h-[60vh] md:h-screen object-cover opacity-90 grayscale hover:grayscale-0 transition-all duration-700"
+              className="w-full h-[60vh] md:h-screen object-cover opacity-90 hover:grayscale-0 transition-all duration-700"
               priority
             />
           </motion.div>
