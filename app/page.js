@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 // --- 1. Custom SVG Icons for Tech Stack ---
 const NextIcon = () => (
@@ -165,13 +166,15 @@ export default function HomePage() {
               transition={{ delay: 1 }}
               className="flex flex-col sm:flex-row justify-center md:justify-start items-center gap-4 sm:gap-6 pt-4"
             >
-              <motion.button
-                whileHover={{ scale: 1.05, backgroundColor: "#fff", color: "#000" }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-black font-bold py-4 px-10 text-sm uppercase rounded-full transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]"
-              >
-                Explore Projects
-              </motion.button>
+              <Link href="/project" aria-label="Navigate to projects page">
+                <motion.button
+                  whileHover={{ scale: 1.05, backgroundColor: "#fff", color: "#000" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-black font-bold py-4 px-10 text-sm uppercase rounded-full transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+                >
+                  Explore Projects
+                </motion.button>
+              </Link>
 
               <motion.div
                 whileHover={{ scale: 1.1, x: 5 }}
@@ -231,7 +234,7 @@ export default function HomePage() {
           >
             <div>
               <motion.h2 className="text-4xl sm:text-5xl font-extrabold mb-6">
-                The Mission
+                <Link href="/project">The mission</Link>
               </motion.h2>
               <div className="h-1 w-24 bg-blue-500 mb-8"></div>
               <p className="text-xl text-gray-300 leading-relaxed">
