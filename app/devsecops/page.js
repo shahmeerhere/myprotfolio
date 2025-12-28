@@ -76,18 +76,7 @@ export default function DevSecOpsPortfolio() {
       description: "Explore beautiful destinations across Pakistan.",
       url: "https://paktourism.vercel.app/",
     },
-    {
-      image: "/p3.png",
-      title: "Weather App",
-      description: "Real-time weather tracking app powered by OpenWeather API.",
-      url: "https://weatherapp-nine-blond.vercel.app"
-    },
-    {
-      image: "/p6.png",
-      title: "iTask",
-      description: "A simple React.js app to manage daily tasks.",
-      url: "https://todolist-eight-tau-49.vercel.app/"
-    },
+    
   ];
 
   // Data for the DevSecOps Pipeline section

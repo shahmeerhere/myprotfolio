@@ -72,28 +72,7 @@ export default function ProjectsPage() {
       featured: false,
       security: [],
     },
-    {
-      image: "/p3.png",
-      title: "Weather App",
-      category: "API Integration",
-      description: "Real-time weather tracking application powered by OpenWeather API. Features location-based weather data with clean, intuitive interface.",
-      tech: ["React", "OpenWeather API", "Geolocation"],
-      url: "https://weatherapp-nine-blond.vercel.app",
-      github: null,
-      featured: false,
-      security: ["API Key Security"],
-    },
-    {
-      image: "/p6.png",
-      title: "iTask",
-      category: "Productivity",
-      description: "A simple yet powerful task management application built with React. Helps users organize daily tasks with an intuitive interface.",
-      tech: ["React", "Local Storage", "State Management"],
-      url: "https://todolist-eight-tau-49.vercel.app/",
-      github: null,
-      featured: false,
-      security: [],
-    },
+    
   ];
 
   const featuredProjects = projects.filter(p => p.featured);
