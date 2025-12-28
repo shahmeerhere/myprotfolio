@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// Icon for Core Values - using standard SVG for checkmark
 const CheckIcon = ({ className = "w-6 h-6" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -17,30 +16,29 @@ const CheckIcon = ({ className = "w-6 h-6" }) => (
 );
 
 const AboutMePage = () => {
-  // New Core Values focused on the DevSecOps narrative
   const coreValues = [
     {
       title: "Security First (Shift Left)",
       description:
-        "Every line of code is treated as a potential vulnerability. I integrate security testing (SAST/DAST) early to prevent costly fixes later.",
+        "Every line of code is a potential entry point. I build with a 'Default Deny' mindset, integrating security testing (SAST/DAST) early to eliminate trade-offs between speed and safety.",
       iconColor: "text-red-400",
     },
     {
-      title: "Resilience & Reliability",
+      title: "Developer Empathy",
       description:
-        "Building fault-tolerant systems and ensuring continuous uptime through robust CI/CD pipelines and monitoring.",
+        "I bridge the gap between high-speed engineering and ironclad security. I don't just find vulnerabilities; I understand the code and build the automation to fix them.",
       iconColor: "text-blue-400",
     },
     {
-      title: "High Performance Frontend",
+      title: "Autonomous Resilience",
       description:
-        "Obsessed with modern frameworks (Next.js) to deliver exceptional user experience, speed, and accessibility.",
+        "Orchestrating secure-by-design pipelines that protect the software supply chain while maintaining 99.9% reliability and continuous delivery.",
       iconColor: "text-green-400",
     },
     {
-      title: "Growth Mindset",
+      title: "2026 Growth Strategy",
       description:
-        "Dedicated to learning and adopting new tools, especially in the rapidly evolving fields of AI, Cloud, and security architecture.",
+        "Dedicated to mastering the evolving landscape of AI Security (AISecOps), Cloud-Native defense, and Platform Engineering.",
       iconColor: "text-yellow-400",
     },
   ];
@@ -63,7 +61,7 @@ const AboutMePage = () => {
         >
           <Image
             src="/b1.png"
-            alt="Abstract architecture representing complex systems"
+            alt="Secure Infrastructure Architecture"
             width={1600}
             height={900}
             className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition duration-1000"
@@ -82,12 +80,11 @@ const AboutMePage = () => {
         </div>
       </section>
 
-      {/* 🧠 About Section (The "Why") */}
+      {/* 🧠 About Section */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-24 md:py-32">
         <div className="flex flex-col lg:flex-row gap-16 items-start">
-          {/* Left Title */}
           <motion.header
-            className="w-full lg:w-1/3 sticky top-20" // Made it sticky for effect
+            className="w-full lg:w-1/3 lg:sticky lg:top-20"
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -99,7 +96,6 @@ const AboutMePage = () => {
             <div className="w-20 border-b-4 border-blue-500"></div>
           </motion.header>
 
-          {/* Right Description */}
           <motion.section
             className="w-full lg:w-2/3 grid grid-cols-1 gap-12 border-l border-gray-800 lg:pl-12"
             initial={{ opacity: 0, y: 40 }}
@@ -109,40 +105,38 @@ const AboutMePage = () => {
           >
             <article>
               <h2 className="text-2xl font-bold text-blue-400 mb-4 uppercase tracking-wider">
-                My Focus: Secure Product Engineering
+                Focus: Secure-by-Design Product Engineering
               </h2>
-              {/* FIX APPLIED HERE: Replaced outer <p> with <div> */}
               <div className="text-gray-300 text-lg leading-relaxed space-y-4"> 
                 <p>
-                  I am Shahmeer Shahid, a technologist specializing in <b>Frontend Development</b>
-                  backed by a strong <b>DevSecOps</b> philosophy. My work is defined by the commitment
-                  to making systems not only fast and user-friendly, but fundamentally secure and reliable.
+                  I am Shahmeer Shahid, a <b>DevSecOps Engineer</b> with a deep foundation in <b>Product Engineering</b>. 
+                  My mission is to build digital ecosystems that are high-performance, user-centric, and fundamentally ironclad.
                 </p>
                 <p>
-                  My goal is to eliminate the trade-off between speed and security. I leverage modern tools
-                  like Next.js for rapid feature delivery while integrating static analysis (SAST) and container security
-                  into the CI/CD pipeline, ensuring we <b>shift security left</b>—making it proactive, not reactive.
+                  In an era where AI-generated code is increasing deployment velocity, I focus on <b>Verification and Resilience</b>. 
+                  I leverage modern frameworks like Next.js for rapid delivery, while simultaneously orchestrating autonomous 
+                  security gates—SAST, DAST, and Container Hardening directly into the CI/CD pipeline.
                 </p>
               </div>
             </article>
 
             <article className="pt-8 border-t border-gray-800">
               <h2 className="text-xl font-bold text-gray-400 mb-3 uppercase tracking-wider">
-                My Stack & Methodology
+                Stack & Methodology
               </h2>
               <ul className="list-disc list-inside space-y-2 text-gray-500 ml-4">
-                <li><b>Frontend:</b> Next.js, React, Tailwind CSS (Focused on accessibility and performance).</li>
-                <li><b>Security:</b> Snyk integration, GitHub Actions security checks, OWASP Top 10 mitigation.</li>
-                <li><b>Infrastructure:</b> Docker, Containerization, Continuous Integration/Deployment.</li>
+                <li><b>Orchestration:</b> Secure delivery pipelines via GitHub Actions & Vercel.</li>
+                <li><b>Application Security:</b> Hardening architectures using Snyk, Trivy, and OWASP Top 10 mitigation.</li>
+                <li><b>Infrastructure:</b> Containerization (Docker), RBAC, and Cloud-Native Resilience.</li>
+                <li><b>Frontend Excellence:</b> High-performance Next.js/React development with a focus on data integrity.</li>
               </ul>
             </article>
           </motion.section>
         </div>
       </section>
 
-      {/* ⚡ Vision Section (Merging two previous sections) */}
+      {/* ⚡ Design Philosophy */}
       <section className="flex flex-col md:flex-row border-t border-gray-900">
-        {/* Left Content (Mission/Vision Points) */}
         <motion.section
           className="w-full md:w-1/2 p-10 md:p-20 flex flex-col justify-center bg-zinc-950/70"
           initial={{ opacity: 0, x: -60 }}
@@ -151,15 +145,15 @@ const AboutMePage = () => {
           viewport={{ once: true }}
         >
           <h1 className="text-5xl sm:text-6xl font-extrabold mb-4">
-            My Design Philosophy
+            Engineering Strategy
           </h1>
           <div className="w-24 border-b-4 border-white mb-12"></div>
 
           <ul className="space-y-10">
             {[
               "Lead innovation that simplifies complexity: building with clarity, performance, and intent.",
-              "Create systems that are adaptive, blending high functionality with minimalism and exceptional security.",
-              "Use design thinking to align user goals with technical excellence and long-term resilience.",
+              "Create systems that are adaptive, blending high functionality with minimalism and invincible security.",
+              "Use design thinking to align user goals with technical excellence and long-term supply chain resilience.",
             ].map((point, i) => (
               <li key={i} className="flex items-start space-x-6">
                 <span className="text-4xl font-extrabold text-blue-500">
@@ -171,7 +165,6 @@ const AboutMePage = () => {
           </ul>
         </motion.section>
 
-        {/* Right Image */}
         <motion.div
           className="w-full md:w-1/2"
           initial={{ opacity: 0 }}
@@ -180,8 +173,8 @@ const AboutMePage = () => {
           viewport={{ once: true }}
         >
           <Image
-            src="/v1.jpg" // Using one of the existing image placeholders
-            alt="Abstract code visualization"
+            src="/v1.jpg"
+            alt="DevSecOps Secure Pipeline Visualization"
             width={600}
             height={1200}
             className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700"
@@ -189,7 +182,7 @@ const AboutMePage = () => {
         </motion.div>
       </section>
 
-      {/* 💎 Core Values Section (Replaced "Meet My Team") */}
+      {/* 💎 Core Values Section */}
       <section className="py-24 md:py-32 px-6 lg:px-12 bg-zinc-950">
         <motion.header
           className="max-w-4xl mx-auto text-center mb-16"
