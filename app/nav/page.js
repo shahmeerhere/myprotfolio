@@ -7,9 +7,9 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-900">
-      <nav className="flex items-center justify-between py-4 px-6 md:px-12" role="navigation" aria-label="Main navigation">
+      <nav className="flex items-center justify-between py-3 sm:py-4 px-4 sm:px-6 md:px-12" role="navigation" aria-label="Main navigation">
         {/* Brand / Logo */}
-        <Link href="/" className="text-lg md:text-xl font-bold tracking-widest text-white hover:text-gray-300 transition-colors" aria-label="Home">
+        <Link href="/" className="text-base sm:text-lg md:text-xl font-bold tracking-widest text-white hover:text-gray-300 transition-colors truncate" aria-label="Home">
           Shahmeer Shahid
         </Link>
 
