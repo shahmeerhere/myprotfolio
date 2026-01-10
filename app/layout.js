@@ -1,7 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./nav/page";
-import Footer from "./components/Footer";
+
+import Navbar from "./nav/page"; 
+import Footer from "./components/Footer"; 
+import SplashCursor from "./components/SplashCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,32 +17,19 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Shahmeer Shahid | Frontend Developer & DevSecOps Advocate",
-  description: "Professional portfolio showcasing secure web applications, DevSecOps practices, and modern frontend development. Specializing in Next.js, React, security-first development, and CI/CD pipelines.",
-  keywords: ["Shahmeer Shahid", "Frontend Developer", "DevSecOps", "Next.js", "React", "Web Security", "Portfolio", "Full Stack Developer"],
+  description: "Professional portfolio showcasing secure web applications.",
   authors: [{ name: "Shahmeer Shahid" }],
-  openGraph: {
-    title: "Shahmeer Shahid | Frontend Developer & DevSecOps Advocate",
-    description: "Building secure, scalable web applications with modern technologies",
-    type: "website",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Shahmeer Shahid | Frontend Developer & DevSecOps Advocate",
-    description: "Building secure, scalable web applications with modern technologies",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white scroll-smooth`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
+  
+        <SplashCursor />
+        
         <Navbar />    
         <main>{children}</main>
         <Footer />
