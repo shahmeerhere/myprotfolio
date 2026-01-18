@@ -4,127 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
 
-// --- Enhanced Custom Icons with Gradients ---
-const NextIcon = () => (
-    <div className="relative">
-        <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black rounded-lg blur-sm"
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
-        />
-        <svg viewBox="0 0 24 24" className="w-10 h-10 relative z-10">
-            <defs>
-                <linearGradient id="next-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#ffffff" />
-                    <stop offset="100%" stopColor="#a1a1aa" />
-                </linearGradient>
-            </defs>
-            <path
-                stroke="url(#next-gradient)"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13 10V3L4 14h7v7l9-11h-7z"
-            />
-        </svg>
-    </div>
-);
 
-const ReactIcon = () => (
-    <div className="relative">
-        <motion.div
-            className="absolute inset-0 bg-blue-500/10 rounded-full blur-sm"
-            animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
-        />
-        <svg viewBox="0 0 24 24" className="w-10 h-10 relative z-10">
-            <defs>
-                <linearGradient id="react-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#60a5fa" />
-                    <stop offset="100%" stopColor="#3b82f6" />
-                </linearGradient>
-            </defs>
-            <circle cx="12" cy="12" r="3" fill="url(#react-gradient)" />
-            <path
-                stroke="url(#react-gradient)"
-                strokeWidth="2"
-                d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"
-            />
-        </svg>
-    </div>
-);
-
-const SecurityIcon = () => (
-    <div className="relative">
-        <motion.div
-            className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-full blur-sm"
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-        />
-        <svg viewBox="0 0 24 24" className="w-10 h-10 relative z-10 text-green-400">
-            <path
-                fill="currentColor"
-                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-            />
-        </svg>
-    </div>
-);
-
-// --- Premium Abstract Security/Tech Visualization ---
-const SecurityVisual = () => (
-    <div className="relative w-full h-full flex items-center justify-center">
-        {/* Rotating Rings */}
-        {[...Array(3)].map((_, i) => (
-            <motion.div
-                key={i}
-                className="absolute rounded-full border border-blue-500/20"
-                style={{
-                    width: `${300 + i * 100}px`,
-                    height: `${300 + i * 100}px`,
-                    borderStyle: i % 2 === 0 ? "solid" : "dashed",
-                }}
-                animate={{
-                    rotate: i % 2 === 0 ? 360 : -360,
-                    scale: [1, 1.05, 1],
-                }}
-                transition={{
-                    rotate: { duration: 20 + i * 5, repeat: Infinity, ease: "linear" },
-                    scale: { duration: 5, repeat: Infinity, ease: "easeInOut" }
-                }}
-            />
-        ))}
-
-        {/* Central Core */}
-        <motion.div
-            className="relative z-10 w-48 h-48 bg-black/50 backdrop-blur-md rounded-full border border-blue-500/50 flex items-center justify-center shadow-[0_0_50px_rgba(59,130,246,0.3)]"
-            animate={{
-                boxShadow: ["0 0 50px rgba(59,130,246,0.3)", "0 0 80px rgba(59,130,246,0.6)", "0 0 50px rgba(59,130,246,0.3)"]
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-        >
-            <SecurityIcon />
-
-            {/* Floating Particles around core */}
-            {[...Array(6)].map((_, i) => (
-                <motion.div
-                    key={`p-${i}`}
-                    className="absolute w-2 h-2 bg-blue-400 rounded-full"
-                    animate={{
-                        x: [0, Math.cos(i) * 60, 0],
-                        y: [0, Math.sin(i) * 60, 0],
-                        opacity: [0, 1, 0]
-                    }}
-                    transition={{
-                        duration: 3,
-                        delay: i * 0.5,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }}
-                />
-            ))}
-        </motion.div>
-    </div>
-);
 
 export default function Hero() {
     const containerRef = useRef(null);
@@ -235,7 +115,7 @@ export default function Hero() {
                     </div>
                 </motion.article>
 
-                {/* === Right Content - Abstract Visual === */}
+                {/* === Right Content - 3D Visual === */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -243,8 +123,64 @@ export default function Hero() {
                     className="w-full md:w-1/2 h-[50vh] md:h-screen flex items-center justify-center relative mt-10 md:mt-0"
                 >
                     {/* Background Glow */}
-                    <div className="absolute inset-0 bg-blue-500/10 blur-[100px] rounded-full mix-blend-screen" />
-                    <SecurityVisual />
+                    <motion.div
+                        animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+                        transition={{ duration: 4, repeat: Infinity }}
+                        className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-blue-500/10 to-transparent blur-[80px] rounded-full"
+                    />
+
+                    {/* 3D Sphere Image with Animation */}
+                    <motion.div
+                        animate={{
+                            y: [0, -20, 0],
+                            rotate: [0, 3, 0, -3, 0],
+                        }}
+                        transition={{
+                            y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                            rotate: { duration: 8, repeat: Infinity, ease: "easeInOut" },
+                        }}
+                        className="relative z-10"
+                    >
+                        {/* Glowing ring around image */}
+                        <motion.div
+                            animate={{
+                                boxShadow: [
+                                    "0 0 60px rgba(139, 92, 246, 0.2), 0 0 120px rgba(59, 130, 246, 0.1)",
+                                    "0 0 80px rgba(139, 92, 246, 0.4), 0 0 160px rgba(59, 130, 246, 0.2)",
+                                    "0 0 60px rgba(139, 92, 246, 0.2), 0 0 120px rgba(59, 130, 246, 0.1)",
+                                ]
+                            }}
+                            transition={{ duration: 3, repeat: Infinity }}
+                            className="rounded-full"
+                        >
+                            <img
+                                src="/hero_3d_sphere.png"
+                                alt="3D Holographic Sphere"
+                                className="w-[280px] h-[280px] md:w-[400px] md:h-[400px] object-contain"
+                            />
+                        </motion.div>
+
+                        {/* Floating particles */}
+                        {[...Array(5)].map((_, i) => (
+                            <motion.div
+                                key={i}
+                                className="absolute w-1.5 h-1.5 bg-violet-400 rounded-full"
+                                style={{
+                                    top: `${20 + i * 15}%`,
+                                    left: `${10 + i * 20}%`,
+                                }}
+                                animate={{
+                                    y: [0, -20, 0],
+                                    opacity: [0.3, 1, 0.3],
+                                }}
+                                transition={{
+                                    duration: 2 + i * 0.5,
+                                    repeat: Infinity,
+                                    delay: i * 0.3,
+                                }}
+                            />
+                        ))}
+                    </motion.div>
                 </motion.div>
 
             </motion.section>

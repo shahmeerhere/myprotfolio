@@ -39,17 +39,7 @@ export default function ProjectsSection({ id }) {
             featured: true,
             security: ["Zero Trust Arch", "ABAC Policies", "E2E Encryption"],
         },
-        {
-            image: "/p2.png",
-            title: "AutoSched Agent",
-            category: "Constraint AI",
-            description: "Algorithmic scheduling agent that solves NP-hard overlap problems in real-time. optimized for university-scale resource allocation.",
-            tech: ["React", "Genetic Algos", "Heuristics", "WASM"],
-            url: "https://timetablegenerator-iota.vercel.app",
-            github: null,
-            featured: false,
-            security: ["DoS Protection", "Input Sanitization"],
-        },
+
         {
             image: "/p5.png",
             title: "Cars Vault",
@@ -72,7 +62,6 @@ export default function ProjectsSection({ id }) {
             featured: false,
             security: [],
         },
-
     ];
 
     const featuredProjects = projects.filter(p => p.featured);
@@ -103,7 +92,6 @@ export default function ProjectsSection({ id }) {
         <section id={id} className="min-h-screen bg-black text-white py-24">
             {/* Header Section */}
             <div className="relative px-6 overflow-hidden mb-16">
-                <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 via-transparent to-black"></div>
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -152,7 +140,7 @@ export default function ProjectsSection({ id }) {
 
             {/* Other Projects */}
             {otherProjects.length > 0 && (
-                <div className="px-6 py-16 bg-zinc-950/50">
+                <div className="px-6 py-16 bg-black">
                     <div className="max-w-7xl mx-auto">
                         <motion.h2
                             initial={{ opacity: 0, x: -30 }}
