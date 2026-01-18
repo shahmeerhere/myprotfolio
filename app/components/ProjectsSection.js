@@ -8,47 +8,47 @@ export default function ProjectsSection({ id }) {
     const projects = [
         {
             image: "/p9.png",
-            title: "Food Genie",
-            category: "AI & API Security",
-            description: "AI-Driven Recipe Generator with OpenAI integration. Implemented input validation, rate limiting, and secure API practices to prevent abuse and ensure data integrity.",
-            tech: ["Next.js", "Supabase", "OpenAI API", "Security"],
+            title: "NeuroGastronomy AI",
+            category: "GenAI & LLM Ops",
+            description: "Enterprise-grade Recipe Engine powered by Fine-Tuned LLMs. Features RAG for localized ingredients and strict output guardrails against hallucinated health advice.",
+            tech: ["Next.js", "OpenAI / LangChain", "Vector DB", "Prompt Eng."],
             url: "https://foodgenie-five.vercel.app/",
             github: null,
             featured: true,
-            security: ["Input Validation", "Rate Limiting", "API Security"],
+            security: ["Prompt Injection Defense", "PII Redaction", "Output Validation"],
         },
         {
             image: "/p7.png",
-            title: "Morva",
-            category: "E-Commerce",
-            description: "Scalable E-Commerce Store with seamless UX. Designed for high performance with PCI DSS minimal compliance via external payment gateways and secure state management.",
-            tech: ["Next.js", "React", "Payment Gateway", "State Management"],
+            title: "Lumix Commerce",
+            category: "Headless E-Com Platform",
+            description: "High-performance headless architecture for global retail. Implements edge-caching strategies and PCI-DSS compliant payment tunnels for sub-second transactions.",
+            tech: ["Next.js 15", "Edge Functions", "Stripe Connect", "Redis"],
             url: "https://shoestore-9yb9.vercel.app/",
             github: null,
             featured: true,
-            security: ["PCI DSS Compliance", "Secure Payments", "State Security"],
+            security: ["PCI-DSS Tunnels", "Bot Mitigation", "Session Hygiene"],
         },
         {
             image: "/p8.png",
-            title: "Just Me",
-            category: "Data Security",
-            description: "Personal Data Vault featuring Role-Based Access Control (RBAC) and secure, encrypted storage. Focus on robust authentication flows (OAuth) and authorization checks.",
-            tech: ["Next.js", "OAuth", "RBAC", "Encryption"],
+            title: "ZeroTrust Vault",
+            category: "Identity & Access",
+            description: "A secure digital fortress for personal data. Built on Zero Trust principles with granular ABAC (Attribute-Based Access Control) and client-side encryption keys.",
+            tech: ["Next.js", "Keycloak / OAuth", "AES-256", "WebAuthn"],
             url: "https://justme-ashy.vercel.app/",
             github: null,
             featured: true,
-            security: ["RBAC", "OAuth", "Data Encryption"],
+            security: ["Zero Trust Arch", "ABAC Policies", "E2E Encryption"],
         },
         {
             image: "/p2.png",
-            title: "Smart Scheduler",
-            category: "Logic & Resilience",
-            description: "A logic-heavy application utilizing conflict-detection algorithms for scheduling. Secured backend endpoints against injection attacks and ensures data resilience.",
-            tech: ["React", "Algorithms", "Backend Security", "Data Validation"],
+            title: "AutoSched Agent",
+            category: "Constraint AI",
+            description: "Algorithmic scheduling agent that solves NP-hard overlap problems in real-time. optimized for university-scale resource allocation.",
+            tech: ["React", "Genetic Algos", "Heuristics", "WASM"],
             url: "https://timetablegenerator-iota.vercel.app",
             github: null,
             featured: false,
-            security: ["SQL Injection Prevention", "Input Sanitization"],
+            security: ["DoS Protection", "Input Sanitization"],
         },
         {
             image: "/p5.png",
@@ -111,7 +111,7 @@ export default function ProjectsSection({ id }) {
                     viewport={{ once: true }}
                     className="relative z-10 max-w-7xl mx-auto text-center"
                 >
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-white via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-white via-blue-400 to-cyan-400 bg-clip-text text-transparent pb-2 leading-tight">
                         My Projects
                     </h1>
                     <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>

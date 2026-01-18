@@ -159,7 +159,7 @@ export default function Hero() {
     };
 
     return (
-        <div ref={containerRef} className="relative min-h-screen bg-[#444] overflow-hidden flex flex-col justify-center">
+        <div ref={containerRef} className="relative min-h-screen bg-black overflow-hidden flex flex-col justify-center">
             <motion.section
                 style={{ opacity, scale }}
                 className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl mx-auto px-6 relative z-10 pt-20"

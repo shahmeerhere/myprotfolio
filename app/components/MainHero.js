@@ -18,7 +18,7 @@ export default function MainHero() {
     }, []);
 
     return (
-        <section className="relative w-full h-screen bg-[#444] overflow-hidden flex flex-col justify-between">
+        <section className="relative w-full h-screen bg-black overflow-hidden flex flex-col justify-between">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
@@ -38,11 +38,11 @@ export default function MainHero() {
                 {/* Left side text removed as requested */}
                 <div className="flex flex-col gap-1 text-right">
                     <span className="flex items-center gap-2 justify-end">
-                        <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        Available for project
+                        <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+                        Building Resilient AI Systems
                     </span>
                     <span>{time} GMT+5</span>
-                    <span>EARLY 2026</span>
+                    <span>AI PLATFORM ENG.</span>
                 </div>
             </header>
 
@@ -75,8 +75,8 @@ export default function MainHero() {
                         transition={{ delay: 1, duration: 1 }}
                         className="text-lg md:text-xl font-light text-white leading-relaxed"
                     >
-                        Building <span className="font-bold">brands</span>, <span className="font-bold">websites</span>, <br />
-                        and <span className="font-bold">secure experiences</span>.
+                        Engineering <span className="font-bold">Autonomous Systems</span>, <br />
+                        <span className="font-bold">AI Infrastructure</span>, and <span className="font-bold">Secure Platforms</span>.
                     </motion.p>
                     <div className="mt-4 flex gap-4 text-xs font-mono tracking-widest uppercase">
                         <span>Scroll</span>

@@ -11,7 +11,7 @@ import ParticleEffect from "./components/ParticleEffect";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#444] text-white font-sans selection:bg-blue-500/50">
+    <main className="min-h-screen bg-black text-white font-sans selection:bg-blue-500/50">
       <MainHero />
       <AnimatedBackground />
       <ParticleEffect />

@@ -64,9 +64,8 @@ export default function ContactSection({ id }) {
                             viewport={{ once: true }}
                             className="text-gray-400 leading-relaxed"
                         >
-                            Open for collaborations, freelance projects, and
-                            cybersecurity-focused roles.
-                            Let’s build secure web platforms, scalable systems, and meaningful tech solutions.
+                            Open for High-Impact roles in <b>AI Engineering</b>, <b>Platform Security</b>, and <b>Cloud Architecture</b>.
+                            Let’s build the intelligent systems of tomorrow, securely and at scale.
                         </motion.p>
 
                         {/* CONTACT LIST */}

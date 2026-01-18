@@ -18,27 +18,27 @@ const CheckIcon = ({ className = "w-6 h-6" }) => (
 export default function AboutSection({ id }) {
     const coreValues = [
         {
-            title: "Security First (Shift Left)",
+            title: "Zero-Trust AI Architecture",
             description:
-                "Every line of code is a potential entry point. I build with a 'Default Deny' mindset, integrating security testing (SAST/DAST) early to eliminate trade-offs between speed and safety.",
+                "Building systems that assume breach. I integrate identity-aware proxies and cryptographic verification into AI model serving layers.",
             iconColor: "text-red-400",
         },
         {
-            title: "Developer Empathy",
+            title: "Autonomous Reliability",
             description:
-                "I bridge the gap between high-speed engineering and ironclad security. I don't just find vulnerabilities; I understand the code and build the automation to fix them.",
+                "Engineering self-healing platforms. I design Kubernetes operators that automatically scale and patch infrastructure without human intervention.",
             iconColor: "text-blue-400",
         },
         {
-            title: "Autonomous Resilience",
+            title: "Supply Chain Defense",
             description:
-                "Orchestrating secure-by-design pipelines that protect the software supply chain while maintaining 99.9% reliability and continuous delivery.",
+                "Securing the software factory. From signed commits to SBOM generation, ensuring that every artifact deployed is verified and trusted.",
             iconColor: "text-green-400",
         },
         {
-            title: "2026 Growth Strategy",
+            title: "Generative Innovation",
             description:
-                "Dedicated to mastering the evolving landscape of AI Security (AISecOps), Cloud-Native defense, and Platform Engineering.",
+                "Leveraging LLMs not just for features, but to optimize the engineering process itself—automating docs, tests, and security audits.",
             iconColor: "text-yellow-400",
         },
     ];
@@ -80,30 +80,29 @@ export default function AboutSection({ id }) {
                     >
                         <article>
                             <h2 className="text-2xl font-bold text-blue-400 mb-4 uppercase tracking-wider">
-                                Focus: Secure-by-Design Product Engineering
+                                Focus: AI Infrastructure & Platform Engineering
                             </h2>
                             <div className="text-gray-300 text-lg leading-relaxed space-y-4">
                                 <p>
-                                    I am Shahmeer Shahid, a <b>DevSecOps Engineer</b> with a deep foundation in <b>Product Engineering</b>.
-                                    My mission is to build digital ecosystems that are high-performance, user-centric, and fundamentally ironclad.
+                                    I am Shahmeer Shahid, an <b>AI Platform Engineer</b> specialized in <b>Secure Autonomous Systems</b>.
+                                    My mission is to architect the infrastructure that powers the next generation of intelligent applications.
                                 </p>
                                 <p>
-                                    In an era where AI-generated code is increasing deployment velocity, I focus on <b>Verification and Resilience</b>.
-                                    I leverage modern frameworks like Next.js for rapid delivery, while simultaneously orchestrating autonomous
-                                    security gates—SAST, DAST, and Container Hardening directly into the CI/CD pipeline.
+                                    As AI models move from production to mission-critical dependency, I verify their <b>Safety and Reliability</b>.
+                                    I blend <b>DevSecOps rigor</b> with <b>MLOps agility</b>, building pipelines that are not just fast, but inherently secure against adversarial ML attacks.
                                 </p>
                             </div>
                         </article>
 
                         <article className="pt-8">
                             <h2 className="text-xl font-bold text-gray-400 mb-3 uppercase tracking-wider">
-                                Stack & Methodology
+                                Advanced Tech Stack
                             </h2>
                             <ul className="list-disc list-inside space-y-2 text-gray-500 ml-4">
-                                <li><b>Orchestration:</b> Secure delivery pipelines via GitHub Actions & Vercel.</li>
-                                <li><b>Application Security:</b> Hardening architectures using Snyk, Trivy, and OWASP Top 10 mitigation.</li>
-                                <li><b>Infrastructure:</b> Containerization (Docker), RBAC, and Cloud-Native Resilience.</li>
-                                <li><b>Frontend Excellence:</b> High-performance Next.js/React development with a focus on data integrity.</li>
+                                <li><b>Orchestration:</b> Kubernetes (EKS/GKE), Helm, Docker, & WebAssembly (WASM).</li>
+                                <li><b>AI Security:</b> LLM Guardrails, Prompt Defense, & Model Governance.</li>
+                                <li><b>Infrastructure:</b> Terraform (IaC), Ansible, & AWS/GCP Cloud Native Architecture.</li>
+                                <li><b>Frontend AI:</b> Next.js 15, React Server Components, & Vector Database Integration.</li>
                             </ul>
                         </article>
                     </motion.section>

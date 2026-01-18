@@ -38,12 +38,12 @@ export default function DevSecOpsSection({ id }) {
 
     // Data for the DevSecOps Pipeline section
     const pipelineSteps = [
-        { title: "Secure Frontend (DEV)", desc: "Crafting zero-vulnerability UIs using Next.js, React, and strict dependency scanning (SAST) on the client side.", icon: <FaReact />, color: "#38bdf8" },
-        { title: "API Resilience (SEC)", desc: "Building secure, high-throughput APIs (Node.js/Supabase) with input sanitization, rate limiting, and OWASP mitigation.", icon: <FaShieldAlt />, color: "#E34A30" },
-        { title: "Containerization (OPS)", desc: "Deploying applications with Docker and Kubernetes for consistent, scalable, and isolated production environments.", icon: <SiKubernetes />, color: "#3069c5" },
-        { title: "Hardened OS & Net (SEC)", desc: "Experience with Linux hardening, network configuration, virtual machines, and Red Hat preparation.", icon: <FaLinux />, color: "#ff9900" },
-        { title: "Automated CI/CD (OPS)", desc: "Using Git & GitHub Actions to enforce code quality, run automated tests, and block deployments upon critical vulnerability detection.", icon: <FaGitAlt />, color: "#F1502F" },
-        { title: "Cloud & Monitoring (OPS)", desc: "Cloud deployment on AWS/Vercel with focused monitoring for runtime errors, performance, and security events.", icon: <FaAws />, color: "#2E7D32" },
+        { title: "AI-Driven UX (DEV)", desc: "Building adaptive, generative interfaces with Next.js and ensuring separate, secure contexts for AI model interactions.", icon: <FaReact />, color: "#38bdf8" },
+        { title: "LLM Gateway Security (SEC)", desc: "Protecting GenAI endpoints. Implementing prompt injection defense, rate limiting, and output validation layers.", icon: <FaShieldAlt />, color: "#E34A30" },
+        { title: "Platform Orchestration (OPS)", desc: "Kubernetes & WASM-based deployment strategies for microservices and heavy AI inference workloads.", icon: <SiKubernetes />, color: "#3069c5" },
+        { title: "Infrastructure as Code (OPS)", desc: "Hardened Linux environments and Terraform/Ansible provisioning for reproducible, immutable production states.", icon: <FaLinux />, color: "#ff9900" },
+        { title: "Autonomous Pipelines (OPS)", desc: "Self-healing CI/CD workflows (GitHub Actions) that automatically rollback on security or visual regression failures.", icon: <FaGitAlt />, color: "#F1502F" },
+        { title: "Observability & AIOps (OPS)", desc: "Deep tracing (OpenTelemetry) and AI-driven anomaly detection to predict outages before they impact users.", icon: <FaAws />, color: "#2E7D32" },
     ];
 
     return (
