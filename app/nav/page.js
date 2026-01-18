@@ -1,62 +1,118 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  });
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "DevSecOps", href: "#devsecops" },
+    { name: "Projects", href: "#project" },
+    { name: "About Me", href: "#about" },
+    { name: "Contact", href: "#contact" },
+  ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-900">
-      <nav className="flex items-center justify-between py-3 sm:py-4 px-4 sm:px-6 md:px-12" role="navigation" aria-label="Main navigation">
-        {/* Brand / Logo */}
-        <Link href="/" className="text-base sm:text-lg md:text-xl font-bold tracking-widest text-white hover:text-gray-300 transition-colors truncate" aria-label="Home">
-          Shahmeer Shahid
-        </Link>
-
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-sm uppercase" role="list">
-          <li role="listitem"><Link href="/" className="hover:text-gray-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">Home</Link></li>
-          <li role="listitem"><Link href="/devsecops" className="hover:text-gray-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">DevSecOps</Link></li>
-          <li role="listitem"><Link href="/project" className="hover:text-gray-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">Projects</Link></li>
-          <li role="listitem"><Link href="/about" className="hover:text-gray-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">About Me</Link></li>
-          <li role="listitem"><Link href="/contact" className="hover:text-gray-400 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded">Contact</Link></li>
-        </ul>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-blue-500 rounded p-1"
-          aria-label="Toggle Menu"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-menu"
+    <motion.header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out font-outfit ${scrolled ? "pt-4" : "pt-0 bg-transparent"
+        }`}
+    >
+      <div className="flex justify-center w-full">
+        <motion.nav
+          initial={false}
+          animate={{
+            width: scrolled ? "85%" : "100%",
+            borderRadius: scrolled ? "9999px" : "0px",
+            backgroundColor: scrolled ? "rgba(20, 20, 20, 0.8)" : "transparent",
+            backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
+            border: scrolled ? "1px solid rgba(255,255,255,0.1)" : "none",
+            y: scrolled ? 10 : 0
+          }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className={`flex items-center justify-between px-6 md:px-12 transition-all duration-500 ${scrolled ? "py-3 max-w-5xl shadow-2xl shadow-blue-900/10" : "py-4 sm:py-6 w-full"
+            }`}
+          role="navigation"
+          aria-label="Main navigation"
         >
-          {menuOpen ? (
-            // Close Icon
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            // Hamburger Icon
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
+          {/* Brand / Logo */}
+          <Link
+            href="/"
+            className="text-2xl md:text-3xl font-bold tracking-tight text-white hover:text-blue-400 transition-colors truncate font-dancing"
+            aria-label="Home"
+          >
+            Shahmeer
+          </Link>
 
-        {/* Mobile Dropdown */}
-        {menuOpen && (
-          <div id="mobile-menu" className="absolute top-full left-0 right-0 bg-black border-t border-gray-900 md:hidden animate-slideDown" role="menu">
-            <ul className="flex flex-col text-center text-sm uppercase py-4 space-y-4" role="list">
-              <li><Link href="/" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400 transition-colors">Home</Link></li>
-              <li><Link href="/devsecops" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400 transition-colors">DevSecOps</Link></li>
-              <li><Link href="/project" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400 transition-colors">Projects</Link></li>
-              <li><Link href="/about" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400 transition-colors">About Me</Link></li>
-              <li><Link href="/contact" onClick={() => setMenuOpen(false)} className="block hover:text-gray-400 transition-colors">Contact</Link></li>
-            </ul>
-          </div>
-        )}
-      </nav>
-    </header>
+          {/* Desktop Menu */}
+          <ul className={`hidden md:flex items-center transition-all duration-500 ${scrolled ? "gap-6" : "gap-10"}`} role="list">
+            {navLinks.map((link) => (
+              <li key={link.name} role="listitem">
+                <Link
+                  href={link.href}
+                  className="text-sm font-medium hover:text-blue-400 transition-colors text-gray-300 tracking-wide font-outfit uppercase"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Mobile Menu Button - Keeping simpler for now */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden text-white focus:outline-none p-1"
+            aria-label="Toggle Menu"
+          >
+            {menuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </motion.nav>
+      </div>
+
+      {/* Mobile Dropdown - Outside the shrinking container */}
+      {menuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="absolute top-full left-0 right-0 bg-black/95 border-b border-gray-800 md:hidden p-4"
+        >
+          <ul className="flex flex-col text-center text-sm font-medium space-y-4 font-outfit" role="list">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="block py-2 text-gray-300 hover:text-white transition-colors"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      )}
+    </motion.header>
   );
 };
 

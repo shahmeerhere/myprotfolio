@@ -15,51 +15,28 @@ export default function AnimatedBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
-      {/* Animated Gradient Orbs - Responsive sizes */}
-      <motion.div
-        className="absolute top-0 left-1/4 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-blue-500/20 rounded-full blur-3xl"
-        animate={{
-          x: [0, 100, 0],
-          y: [0, 50, 0],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute top-1/2 right-1/4 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-cyan-500/20 rounded-full blur-3xl"
-        animate={{
-          x: [0, -100, 0],
-          y: [0, -50, 0],
-          scale: [1, 1.3, 1],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-0 left-1/2 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-purple-500/20 rounded-full blur-3xl"
-        animate={{
-          x: [0, 50, 0],
-          y: [0, -100, 0],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 30,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-black">
 
-      {/* Grid Pattern - Responsive size */}
+      {/* Central Colorful Aura */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <motion.div
+          className="w-[80vw] h-[80vh] bg-gradient-to-r from-blue-900/20 via-cyan-900/20 to-purple-900/20 rounded-full blur-[120px] opacity-40"
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [0.3, 0.4, 0.3],
+            rotate: [0, 45, 0]
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      </div>
+
+      {/* Grid Pattern */}
       <div
-        className="absolute inset-0 opacity-10 md:opacity-20"
+        className="absolute inset-0 opacity-10"
         style={{
           backgroundImage: `
             linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
@@ -69,21 +46,55 @@ export default function AnimatedBackground() {
         }}
       />
 
-      {/* Animated Lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-10">
+      {/* Floating Orbs - More centralized */}
+      <motion.div
+        className="absolute top-1/3 left-1/3 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"
+        animate={{
+          x: [-50, 50, -50],
+          y: [-50, 50, -50],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      <motion.div
+        className="absolute bottom-1/3 right-1/3 w-96 h-96 bg-purple-600/10 rounded-full blur-[100px]"
+        animate={{
+          x: [50, -50, 50],
+          y: [50, -50, 50],
+        }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
+      {/* === VIGNETTE MASK (The key to "sides must be black") === */}
+      {/* This radial gradient mask fades the content to black at the edges */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(circle at center, transparent 30%, black 100%)"
+        }}
+      />
+
+      {/* Animated Subtle Vertical Lines */}
+      <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none">
         <motion.line
-          x1="0"
+          x1="50%"
           y1="0"
-          x2="100%"
+          x2="50%"
           y2="100%"
-          stroke="rgba(59, 130, 246, 0.3)"
+          stroke="rgba(59, 130, 246, 0.2)"
           strokeWidth="1"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
+          animate={{ opacity: [0.2, 0.5, 0.2] }}
+          transition={{ duration: 4, repeat: Infinity }}
         />
       </svg>
     </div>
   );
 }
-
