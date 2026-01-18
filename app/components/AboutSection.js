@@ -95,7 +95,7 @@ export default function AboutSection({ id }) {
                             </div>
                         </article>
 
-                        <article className="pt-8 border-t border-gray-800">
+                        <article className="pt-8">
                             <h2 className="text-xl font-bold text-gray-400 mb-3 uppercase tracking-wider">
                                 Stack & Methodology
                             </h2>
@@ -111,7 +111,7 @@ export default function AboutSection({ id }) {
             </div>
 
             {/* ⚡ Design Philosophy */}
-            <div className="flex flex-col md:flex-row border-t border-gray-900 mb-24">
+            <div className="flex flex-col md:flex-row mb-24">
                 <motion.section
                     className="w-full md:w-1/2 p-10 md:p-20 flex flex-col justify-center bg-zinc-950/70"
                     initial={{ opacity: 0, x: -60 }}
@@ -148,8 +148,8 @@ export default function AboutSection({ id }) {
                     viewport={{ once: true }}
                 >
                     <Image
-                        src="/v1.jpg"
-                        alt="DevSecOps Secure Pipeline Visualization"
+                        src="/strategy.png"
+                        alt="Engineering Strategy Visualization"
                         fill
                         className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700"
                     />

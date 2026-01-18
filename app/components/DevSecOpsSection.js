@@ -91,7 +91,7 @@ export default function DevSecOpsSection({ id }) {
                 </div>
             </div>
 
-            <hr className="border-gray-800 mb-20" />
+
 
             {/* --- 2. THE DEVSECOPS PIPELINE --- */}
             <motion.div
@@ -142,7 +142,7 @@ export default function DevSecOpsSection({ id }) {
                 </div>
             </motion.div>
 
-            <hr className="border-gray-800 my-20" />
+
 
             {/* --- 3. DASHBOARD / TOOLS --- */}
             <div className="px-6">

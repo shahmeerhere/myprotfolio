@@ -705,7 +705,7 @@ function SplashCursor({
       colorUpdateTimer += dt * config.COLOR_UPDATE_SPEED;
       if (colorUpdateTimer >= 1) {
         colorUpdateTimer = wrap(colorUpdateTimer, 0, 1);
-        colorIndex = (colorIndex + 1) % 3; // Cycle through 0, 1, 2
+        colorIndex = (colorIndex + 1) % 2; // Cycle through 0, 1
         pointers.forEach(p => {
           p.color = generateColor();
         });
@@ -882,19 +882,18 @@ function SplashCursor({
     function generateColor() {
       // Three-tone palette: blue, green, purple
       const colors = [
-        { r: 0.1, g: 0.2, b: 0.8 },  // Blue
-        { r: 0.1, g: 0.8, b: 0.2 },  // Green
-        { r: 0.6, g: 0.1, b: 0.8 }   // Purple
+        { r: 0.0, g: 0.8, b: 1.0 },  // Sky Blue
+        { r: 0.6, g: 0.6, b: 0.7 }   // Dim Lightened White (not sharp)
       ];
-      
+
       // Use the current colorIndex to pick from the three colors
-      const color = colors[colorIndex];
-      
+      const color = colors[colorIndex % 2];
+
       // Apply the same scaling as original for consistency
       color.r *= 0.15;
       color.g *= 0.15;
       color.b *= 0.15;
-      
+
       return color;
     }
 

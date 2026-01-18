@@ -23,6 +23,7 @@ import {
     SiBurpsuite,
 } from "react-icons/si";
 import { IoIosColorPalette } from "react-icons/io";
+import { MdGradient } from "react-icons/md";
 import { Button } from "./ui/button";
 
 const allTools = [
@@ -30,7 +31,8 @@ const allTools = [
     { name: "React", icon: <FaReact />, color: "#61dafb", category: "Frontend", url: "https://reactjs.org/" },
     { name: "Next.js", icon: <SiNextdotjs />, color: "#cccccc", category: "Frontend", url: "https://nextjs.org/" },
     { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "#38bdf8", category: "Frontend", url: "https://tailwindcss.com/" },
-    { name: "UI/UX Libraries", icon: <IoIosColorPalette />, color: "#a855f7", category: "Frontend", url: "https://reactbits.dev/" },
+    { name: "React Bits", icon: <IoIosColorPalette />, color: "#a855f7", category: "Frontend", url: "https://reactbits.dev/" },
+    { name: "uiGradients", icon: <MdGradient />, color: "#eb3349", category: "Frontend", url: "https://uigradients.com/" },
 
     // --- Backend & Auth ---
     { name: "Node.js", icon: <FaNodeJs />, color: "#3c873a", category: "Backend", url: "https://nodejs.org/" },
@@ -91,8 +93,8 @@ export default function Dashboard() {
                     <Button
                         key={cat}
                         className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${filter === cat
-                                ? 'bg-cyan-500 hover:bg-cyan-600 text-black shadow-lg shadow-cyan-500/30'
-                                : 'bg-gray-800 border border-gray-700 text-gray-300 hover:bg-gray-700'
+                            ? 'bg-cyan-500 hover:bg-cyan-600 text-black shadow-lg shadow-cyan-500/30'
+                            : 'bg-gray-800 border border-gray-700 text-gray-300 hover:bg-gray-700'
                             }`}
                         onClick={() => setFilter(cat)}
                     >
