@@ -41,7 +41,12 @@ const Navbar = () => {
             border: scrolled ? "1px solid rgba(255,255,255,0.1)" : "none",
             y: scrolled ? 10 : 0
           }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+            mass: 0.5
+          }}
           className={`flex items-center justify-between px-6 md:px-12 transition-all duration-500 ${scrolled ? "py-3 max-w-5xl shadow-2xl shadow-blue-900/10" : "py-4 sm:py-6 w-full"
             }`}
           role="navigation"
