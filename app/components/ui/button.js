@@ -8,6 +8,7 @@ export function Button({ children, variant = "default", size = "md", className =
   const variants = {
     default: "bg-gray-900 text-white hover:bg-gray-800 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200",
     outline: "bg-transparent border border-gray-300 text-gray-900 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-100 dark:hover:bg-gray-700",
+    ghost: "bg-transparent hover:bg-white/10 text-white",
   };
 
   const sizes = {

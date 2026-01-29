@@ -88,13 +88,14 @@ export default function Dashboard() {
             </h1>
 
             {/* Category Buttons */}
-            <div className="flex gap-4 mb-8 flex-wrap justify-center">
+            <div className="flex gap-4 mb-8 flex-wrap justify-center py-4 bg-black/40 backdrop-blur-sm rounded-2xl">
                 {categories.map(cat => (
                     <Button
                         key={cat}
-                        className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${filter === cat
-                            ? 'bg-gradient-to-r from-[#1A1A1C] to-[#4A0E0E] text-[#D1D1D1] shadow-lg shadow-[#4A0E0E]/20 border border-white/10'
-                            : 'bg-black border border-white/5 text-[#8E8E93] hover:bg-[#1A1A1C] hover:text-[#D1D1D1]'
+                        variant="ghost"
+                        className={`px-8 py-2.5 rounded-xl font-bold transition-all duration-300 ${filter === cat
+                            ? 'bg-gradient-to-r from-[#1A1A1C] to-[#4A0E0E] text-[#D1D1D1] shadow-[0_0_20px_rgba(74,14,14,0.3)] scale-105'
+                            : 'bg-black text-[#8E8E93] hover:text-white'
                             }`}
                         onClick={() => setFilter(cat)}
                     >

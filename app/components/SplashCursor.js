@@ -880,13 +880,13 @@ function SplashCursor({
 
     // Modified to only generate blue, green, and purple colors
     function generateColor() {
-      // Very subtle Maroon
-      const color = { r: 0.35, g: 0.05, b: 0.05 }; // Deep Maroon (#590d0d equivalent)
+      // Rich jungle wood brown (#5D4037 / mahogany brown)
+      const color = { r: 0.365, g: 0.251, b: 0.216 };
 
-      // Extreme scaling to keep it 'light' and non-distracting
-      color.r *= 0.25;
-      color.g *= 0.25;
-      color.b *= 0.25;
+      // Moderate opacity for a warm, earthy trail
+      color.r *= 0.30;
+      color.g *= 0.30;
+      color.b *= 0.30;
 
       return color;
     }

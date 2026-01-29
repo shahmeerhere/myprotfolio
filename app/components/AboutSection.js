@@ -52,8 +52,8 @@ export default function AboutSection({ id }) {
             {/* Keeping a version of it as a section header */}
 
             {/* 🧠 About Section */}
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-16">
-                <div className="flex flex-col lg:flex-row gap-16 items-start">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-16 ">
+                <div className="flex flex-col lg:flex-row gap-16 items-start bg-[linear-gradient(to_bottom_right,rgba(0,0,0,0.85)_0%,rgba(0,0,0,0.4)_40%,rgba(0,0,0,0)_75%)]">
                     <motion.header
                         className="w-full lg:w-1/3 lg:sticky lg:top-20"
                         initial={{ opacity: 0, x: -60 }}
@@ -68,7 +68,7 @@ export default function AboutSection({ id }) {
                     </motion.header>
 
                     <motion.section
-                        className="w-full lg:w-2/3 grid grid-cols-1 gap-12 border-l border-white lg:pl-12"
+                        className="w-full lg:w-2/3 grid grid-cols-1 gap-12 border-l border-white/5 lg:pl-12"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.9 }}
