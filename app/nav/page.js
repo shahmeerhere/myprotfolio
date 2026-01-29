@@ -55,7 +55,7 @@ const Navbar = () => {
           {/* Brand / Logo */}
           <Link
             href="/"
-            className="text-2xl md:text-3xl font-bold tracking-tight text-white hover:text-blue-400 transition-colors truncate font-dancing"
+            className="text-2xl md:text-3xl font-bold tracking-tight text-white hover:text-orange-800 transition-colors truncate font-dancing"
             aria-label="Home"
           >
             Shahmeer
@@ -67,7 +67,7 @@ const Navbar = () => {
               <li key={link.name} role="listitem">
                 <Link
                   href={link.href}
-                  className="text-sm font-medium hover:text-blue-400 transition-colors text-gray-300 tracking-wide font-outfit uppercase"
+                  className="text-sm font-medium hover:text-orange-800 transition-colors text-gray-300 tracking-wide font-outfit uppercase"
                 >
                   {link.name}
                 </Link>

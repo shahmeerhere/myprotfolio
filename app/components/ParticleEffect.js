@@ -40,7 +40,7 @@ export default function ParticleEffect() {
       }
 
       draw() {
-        ctx.fillStyle = `rgba(59, 130, 246, ${this.opacity})`;
+        ctx.fillStyle = `rgba(74, 14, 14, ${this.opacity})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -66,7 +66,7 @@ export default function ParticleEffect() {
           // Responsive connection distance
           const maxDistance = window.innerWidth < 768 ? 100 : 150;
           if (distance < maxDistance) {
-            ctx.strokeStyle = `rgba(59, 130, 246, ${0.2 * (1 - distance / maxDistance)})`;
+            ctx.strokeStyle = `rgba(74, 14, 14, ${0.2 * (1 - distance / maxDistance)})`;
             ctx.lineWidth = window.innerWidth < 768 ? 0.3 : 0.5;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);

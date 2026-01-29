@@ -82,7 +82,7 @@ export default function Dashboard() {
         <div className="min-h-screen p-8 bg-transparent flex flex-col justify-center">
             <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-12
                             bg-clip-text text-transparent
-                            bg-gradient-to-r from-white via-gray-400 to-gray-600
+                            bg-gradient-to-r from-[#D1D1D1] via-[#4A0E0E] to-[#1A1A1C]
                             drop-shadow-lg">
                 DevSecOps Tools Dashboard 🛡️
             </h1>
@@ -93,8 +93,8 @@ export default function Dashboard() {
                     <Button
                         key={cat}
                         className={`px-6 py-2 rounded-lg font-semibold transition-all duration-200 ${filter === cat
-                            ? 'bg-cyan-500 hover:bg-cyan-600 text-black shadow-lg shadow-cyan-500/30'
-                            : 'bg-gray-800 border border-gray-700 text-gray-300 hover:bg-gray-700'
+                            ? 'bg-gradient-to-r from-[#1A1A1C] to-[#4A0E0E] text-[#D1D1D1] shadow-lg shadow-[#4A0E0E]/20 border border-white/10'
+                            : 'bg-black border border-white/5 text-[#8E8E93] hover:bg-[#1A1A1C] hover:text-[#D1D1D1]'
                             }`}
                         onClick={() => setFilter(cat)}
                     >
@@ -118,7 +118,7 @@ export default function Dashboard() {
                         variants={itemMotion}
                         whileHover={{ scale: 1.1, y: -5 }}
                         transition={{ type: "spring", stiffness: 300 }}
-                        className="flex flex-col items-center cursor-pointer text-center p-4 bg-white/5 rounded-xl border border-white/10 hover:border-cyan-500/50"
+                        className="flex flex-col items-center cursor-pointer text-center p-4 bg-white/5 backdrop-blur-md rounded-xl border border-white/10 hover:border-[#4A0E0E]/50"
                         onClick={() => window.open(tool.url, "_blank", "noopener,noreferrer")}
                     >
                         <div
@@ -131,8 +131,8 @@ export default function Dashboard() {
                         >
                             {tool.icon}
                         </div>
-                        <span className="mt-2 text-lg font-semibold text-white/90">{tool.name}</span>
-                        <span className="text-xs text-cyan-400/80 uppercase tracking-widest mt-1">
+                        <span className="mt-2 text-lg font-semibold text-[#D1D1D1]">{tool.name}</span>
+                        <span className="text-xs text-[#8E8E93] uppercase tracking-widest mt-1">
                             {tool.category}
                         </span>
                     </motion.div>

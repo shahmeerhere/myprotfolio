@@ -13,7 +13,7 @@ import { SiFiverr, SiUpwork } from "react-icons/si";
 
 export default function ContactSection({ id }) {
     return (
-        <div id={id} className="min-h-screen bg-black text-white font-sans overflow-hidden py-24">
+        <div id={id} className="min-h-screen bg-transparent text-[#D1D1D1] font-sans overflow-hidden py-16">
             {/* CONTACT SECTION */}
             <div className="flex flex-col md:flex-row min-h-screen">
                 {/* LEFT VECTOR PANEL */}
@@ -22,7 +22,7 @@ export default function ContactSection({ id }) {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1 }}
                     viewport={{ once: true }}
-                    className="w-full md:w-1/2 flex items-center justify-center bg-[#111] py-12 md:py-0"
+                    className="w-full md:w-1/2 flex items-center justify-center py-12 md:py-0"
                 >
                     <Image
                         src="/first.svg"
@@ -40,7 +40,7 @@ export default function ContactSection({ id }) {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1 }}
                     viewport={{ once: true }}
-                    className="w-full md:w-1/2 bg-black p-8 md:p-16 flex flex-col justify-center"
+                    className="w-full md:w-1/2 bg-transparent p-8 md:p-16 flex flex-col justify-center"
                 >
                     <div className="max-w-md mx-auto md:mx-0 space-y-10">
                         {/* HEADER */}
@@ -50,10 +50,10 @@ export default function ContactSection({ id }) {
                             transition={{ duration: 0.7 }}
                             viewport={{ once: true }}
                         >
-                            <h1 className="text-5xl sm:text-7xl font-extrabold mb-3 tracking-tight">
+                            <h1 className="text-5xl sm:text-7xl font-extrabold mb-3 tracking-tight text-[#D1D1D1]">
                                 Contact Me
                             </h1>
-                            <div className="w-24 border-b-4 border-cyan-400 mb-10"></div>
+                            <div className="w-24 border-b-4 border-[#4A0E0E] mb-10"></div>
                         </motion.header>
 
                         {/* DESCRIPTION */}
@@ -62,7 +62,7 @@ export default function ContactSection({ id }) {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="text-gray-400 leading-relaxed"
+                            className="text-[#8E8E93] leading-relaxed"
                         >
                             Open for High-Impact roles in <b>AI Engineering</b>, <b>Platform Security</b>, and <b>Cloud Architecture</b>.
                             Let’s build the intelligent systems of tomorrow, securely and at scale.
@@ -155,8 +155,8 @@ export default function ContactSection({ id }) {
 
                             {/* LOCATION */}
                             <div className="flex items-center space-x-3">
-                                <FaMapMarkerAlt className="text-cyan-400" />
-                                <span className="text-cyan-400">Islamabad, Pakistan</span>
+                                <FaMapMarkerAlt className="text-[#8E8E93]" />
+                                <span className="text-[#8E8E93]">Islamabad, Pakistan</span>
                             </div>
                         </motion.div>
                     </div>
@@ -166,7 +166,7 @@ export default function ContactSection({ id }) {
             {/* THANK YOU SECTION */}
             <div className="flex flex-col md:flex-row min-h-screen">
                 {/* TEXT SECTION */}
-                <div className="w-full md:w-1/2 bg-black p-8 md:p-16 flex flex-col justify-center order-2 md:order-1">
+                <div className="w-full md:w-1/2 bg-transparent p-8 md:p-16 flex flex-col justify-center order-2 md:order-1">
                     <motion.div
                         className="max-w-xl mx-auto md:mx-0"
                         initial={{ opacity: 0, y: 40 }}
@@ -174,15 +174,15 @@ export default function ContactSection({ id }) {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h1 className="text-5xl sm:text-7xl font-extrabold mb-3 tracking-tight">
+                        <h1 className="text-5xl sm:text-7xl font-extrabold mb-3 tracking-tight text-[#D1D1D1]">
                             Thank You
                         </h1>
-                        <div className="w-24 border-b-4 border-cyan-400 mb-10"></div>
-                        <p className="text-gray-400 leading-relaxed mb-6">
+                        <div className="w-24 border-b-4 border-[#4A0E0E] mb-10"></div>
+                        <p className="text-[#8E8E93] leading-relaxed mb-6">
                             I appreciate you taking the time to explore my work. If you’re seeking someone driven,
                             creative, and deeply focused on cybersecurity and full-stack development — you’ve found the right person.
                         </p>
-                        <p className="text-gray-400 leading-relaxed">
+                        <p className="text-[#8E8E93] leading-relaxed">
                             Let’s connect and build the future securely, one line of code at a time.
                         </p>
                     </motion.div>
@@ -194,7 +194,7 @@ export default function ContactSection({ id }) {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1 }}
                     viewport={{ once: true }}
-                    className="w-full md:w-1/2 flex items-center justify-center bg-[#111] py-12 md:py-0 order-1 md:order-2"
+                    className="w-full md:w-1/2 flex items-center justify-center py-12 md:py-0 order-1 md:order-2"
                 >
                     <Image
                         src="/second.svg"

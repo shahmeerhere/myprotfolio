@@ -5,13 +5,13 @@ function SplashCursor({
   SIM_RESOLUTION = 128,
   DYE_RESOLUTION = 1440,
   CAPTURE_RESOLUTION = 512,
-  DENSITY_DISSIPATION = 3.5,
-  VELOCITY_DISSIPATION = 2,
+  DENSITY_DISSIPATION = 5.0,
+  VELOCITY_DISSIPATION = 2.5,
   PRESSURE = 0.1,
   PRESSURE_ITERATIONS = 20,
-  CURL = 3,
-  SPLAT_RADIUS = 0.2,
-  SPLAT_FORCE = 6000,
+  CURL = 2,
+  SPLAT_RADIUS = 0.15,
+  SPLAT_FORCE = 4000,
   SHADING = true,
   COLOR_UPDATE_SPEED = 10,
   BACK_COLOR = { r: 0.5, g: 0, b: 0 },
@@ -880,19 +880,13 @@ function SplashCursor({
 
     // Modified to only generate blue, green, and purple colors
     function generateColor() {
-      // Three-tone palette: blue, green, purple
-      const colors = [
-        { r: 0.0, g: 0.8, b: 1.0 },  // Sky Blue
-        { r: 0.6, g: 0.6, b: 0.7 }   // Dim Lightened White (not sharp)
-      ];
+      // Very subtle Maroon
+      const color = { r: 0.35, g: 0.05, b: 0.05 }; // Deep Maroon (#590d0d equivalent)
 
-      // Use the current colorIndex to pick from the three colors
-      const color = colors[colorIndex % 2];
-
-      // Apply the same scaling as original for consistency
-      color.r *= 0.15;
-      color.g *= 0.15;
-      color.b *= 0.15;
+      // Extreme scaling to keep it 'light' and non-distracting
+      color.r *= 0.25;
+      color.g *= 0.25;
+      color.b *= 0.25;
 
       return color;
     }

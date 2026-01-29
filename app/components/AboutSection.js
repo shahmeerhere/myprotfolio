@@ -19,27 +19,23 @@ export default function AboutSection({ id }) {
     const coreValues = [
         {
             title: "Zero-Trust AI Architecture",
-            description:
-                "Building systems that assume breach. I integrate identity-aware proxies and cryptographic verification into AI model serving layers.",
-            iconColor: "text-red-400",
+            description: "Integrating identity-aware proxies and cryptographic verification into AI model layers.",
+            iconColor: "text-[#4A0E0E]",
         },
         {
             title: "Autonomous Reliability",
-            description:
-                "Engineering self-healing platforms. I design Kubernetes operators that automatically scale and patch infrastructure without human intervention.",
-            iconColor: "text-blue-400",
+            description: "Self-healing platforms with Kubernetes operators that scale and patch infrastructure.",
+            iconColor: "text-[#1A1A1C]",
         },
         {
             title: "Supply Chain Defense",
-            description:
-                "Securing the software factory. From signed commits to SBOM generation, ensuring that every artifact deployed is verified and trusted.",
-            iconColor: "text-green-400",
+            description: "Securing the software factory from signed commits to verified deployment artifacts.",
+            iconColor: "text-[#8E8E93]",
         },
         {
             title: "Generative Innovation",
-            description:
-                "Leveraging LLMs not just for features, but to optimize the engineering process itself—automating docs, tests, and security audits.",
-            iconColor: "text-yellow-400",
+            description: "Automating documentation, testing, and security audits using advanced LLM workflows.",
+            iconColor: "text-[#4A0E0E]",
         },
     ];
 
@@ -51,12 +47,12 @@ export default function AboutSection({ id }) {
     };
 
     return (
-        <section id={id} className="min-h-screen bg-black text-white font-sans overflow-x-hidden py-24">
+        <section id={id} className="min-h-screen text-[#D1D1D1] font-sans overflow-x-hidden py-16" style={{ background: "linear-gradient(to bottom left, #000000 0%, transparent 100%)" }}>
             {/* 🖼️ Top Hero Image - Removed or made smaller for section */}
             {/* Keeping a version of it as a section header */}
 
             {/* 🧠 About Section */}
-            <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-24">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-16">
                 <div className="flex flex-col lg:flex-row gap-16 items-start">
                     <motion.header
                         className="w-full lg:w-1/3 lg:sticky lg:top-20"
@@ -65,10 +61,10 @@ export default function AboutSection({ id }) {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h1 className="text-6xl sm:text-7xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
+                        <h1 className="text-6xl sm:text-7xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#D1D1D1] to-[#4A0E0E]">
                             About Me
                         </h1>
-                        <div className="w-20 border-b-4 border-blue-500"></div>
+                        <div className="w-20 border-b-4 border-[#4A0E0E]"></div>
                     </motion.header>
 
                     <motion.section
@@ -79,26 +75,22 @@ export default function AboutSection({ id }) {
                         viewport={{ once: true }}
                     >
                         <article>
-                            <h2 className="text-2xl font-bold text-blue-400 mb-4 uppercase tracking-wider">
+                            <h2 className="text-2xl font-bold text-[#5F0A0A] mb-4 uppercase tracking-wider">
                                 Focus: AI Infrastructure & Platform Engineering
                             </h2>
-                            <div className="text-gray-300 text-lg leading-relaxed space-y-4">
+                            <div className="text-[#8E8E93] text-lg leading-relaxed space-y-4">
                                 <p>
-                                    I am Shahmeer Shahid, an <b>AI Platform Engineer</b> specialized in <b>Secure Autonomous Systems</b>.
-                                    My mission is to architect the infrastructure that powers the next generation of intelligent applications.
-                                </p>
-                                <p>
-                                    As AI models move from production to mission-critical dependency, I verify their <b>Safety and Reliability</b>.
-                                    I blend <b>DevSecOps rigor</b> with <b>MLOps agility</b>, building pipelines that are not just fast, but inherently secure against adversarial ML attacks.
+                                    AI Platform Engineer specialized in <b>Secure Autonomous Systems</b>.
+                                    I architect infrastructure for intelligent applications, blending <b>DevSecOps rigor</b> with <b>MLOps agility</b> for speed and safety.
                                 </p>
                             </div>
                         </article>
 
                         <article className="pt-8">
-                            <h2 className="text-xl font-bold text-gray-400 mb-3 uppercase tracking-wider">
+                            <h2 className="text-xl font-bold text-[#4A0E0E] mb-3 uppercase tracking-wider">
                                 Advanced Tech Stack
                             </h2>
-                            <ul className="list-disc list-inside space-y-2 text-gray-500 ml-4">
+                            <ul className="list-disc list-inside space-y-2 text-[#8E8E93] ml-4">
                                 <li><b>Orchestration:</b> Kubernetes (EKS/GKE), Helm, Docker, & WebAssembly (WASM).</li>
                                 <li><b>AI Security:</b> LLM Guardrails, Prompt Defense, & Model Governance.</li>
                                 <li><b>Infrastructure:</b> Terraform (IaC), Ansible, & AWS/GCP Cloud Native Architecture.</li>
@@ -109,72 +101,70 @@ export default function AboutSection({ id }) {
                 </div>
             </div>
 
-            {/* ⚡ Design Philosophy */}
-            <div className="flex flex-col md:flex-row mb-24">
+            {/* ⚡ Design Philosophy / Engineering Strategy with Background */}
+            <div className="relative min-h-[700px] flex items-center justify-end mb-16 overflow-hidden">
+                {/* Background Image Container */}
+                <div className="absolute inset-0 z-0">
+                    <div
+                        className="absolute inset-0 bg-cover bg-no-repeat opacity-100"
+                        style={{
+                            backgroundImage: "url('/strategy_ultra_clear.png')",
+                            backgroundPosition: 'left bottom'
+                        }}
+                    />
+                    {/* Gradient overlay - shifted to the right to support content */}
+                    <div className="absolute inset-0 bg-gradient-to-l from-black via-black/40 to-transparent" />
+                </div>
+
                 <motion.section
-                    className="w-full md:w-1/2 p-10 md:p-20 flex flex-col justify-center bg-zinc-950/70"
-                    initial={{ opacity: 0, x: -60 }}
+                    className="relative z-10 w-full md:w-1/2 p-10 md:p-20 flex flex-col justify-center"
+                    initial={{ opacity: 0, x: 60 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 1 }}
                     viewport={{ once: true }}
                 >
-                    <h1 className="text-5xl sm:text-6xl font-extrabold mb-4">
+                    <h1 className="text-5xl sm:text-6xl font-extrabold mb-4 text-white">
                         Engineering Strategy
                     </h1>
-                    <div className="w-24 border-b-4 border-white mb-12"></div>
+                    <div className="w-24 border-b-4 border-[#4A0E0E] mb-12"></div>
 
                     <ul className="space-y-10">
                         {[
-                            "Lead innovation that simplifies complexity: building with clarity, performance, and intent.",
-                            "Create systems that are adaptive, blending high functionality with minimalism and invincible security.",
-                            "Use design thinking to align user goals with technical excellence and long-term supply chain resilience.",
+                            "Simplifying complexity with clarity, performance, and intent.",
+                            "Creating adaptive systems that blend functionality with minimalism.",
+                            "Aligning user goals with technical excellence and resilience.",
                         ].map((point, i) => (
-                            <li key={i} className="flex items-start space-x-6">
-                                <span className="text-4xl font-extrabold text-blue-500">
+                            <li key={i} className="flex items-start space-x-6 group">
+                                <span className="text-4xl font-extrabold text-[#4A0E0E] group-hover:text-white transition-colors duration-300">
                                     {i + 1 < 10 ? `0${i + 1}` : i + 1}.
                                 </span>
-                                <p className="text-gray-300 text-lg leading-relaxed">{point}</p>
+                                <p className="text-gray-300 text-lg leading-relaxed group-hover:text-white transition-colors duration-300">{point}</p>
                             </li>
                         ))}
                     </ul>
                 </motion.section>
-
-                <motion.div
-                    className="w-full md:w-1/2 min-h-[500px] relative"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
-                    viewport={{ once: true }}
-                >
-                    <Image
-                        src="/strategy.png"
-                        alt="Engineering Strategy Visualization"
-                        fill
-                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700"
-                    />
-                </motion.div>
             </div>
 
             {/* 💎 Core Values Section */}
-            <div className="px-6 lg:px-12 bg-zinc-950 py-24">
+            <div className="px-6 lg:px-12 bg-transparent py-16">
                 <motion.header
                     className="max-w-4xl mx-auto text-center mb-16"
                     {...valueSectionAnimation}
                 >
-                    <p className="text-sm uppercase tracking-widest text-blue-400 mb-3 font-semibold">
+                    <p className="text-sm uppercase tracking-widest text-[#4A0E0E] mb-3 font-semibold">
                         Pillars of Practice
                     </p>
                     <h1 className="text-5xl sm:text-6xl font-extrabold mb-4">
                         My Core Values
                     </h1>
-                    <div className="w-20 border-b-4 border-blue-500 mx-auto"></div>
+                    <div className="w-20 border-b-4 border-[#4A0E0E] mx-auto"></div>
                 </motion.header>
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
                     {coreValues.map((value, i) => (
                         <motion.article
                             key={i}
-                            className="text-center p-6 bg-zinc-900 border border-gray-800 rounded-lg shadow-xl hover:bg-zinc-800 transition-all duration-300 hover:scale-[1.03]"
+                            className="text-center p-6 bg-white/5 backdrop-blur-md border border-white/5 rounded-lg shadow-xl hover:bg-white/10 transition-all duration-300 hover:scale-[1.03]"
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: i * 0.15 }}
