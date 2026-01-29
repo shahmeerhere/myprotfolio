@@ -99,9 +99,9 @@ export default function ProjectsSection({ id }) {
                     viewport={{ once: true }}
                     className="relative z-10 max-w-7xl mx-auto text-center"
                 >
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-[#D1D1D1] via-[#4A0E0E] to-[#1A1A1C] bg-clip-text text-transparent pb-2 leading-tight">
+                    <h2 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-[#D1D1D1] via-[#4A0E0E] to-[#1A1A1C] bg-clip-text text-transparent pb-2 leading-tight">
                         My Projects
-                    </h1>
+                    </h2>
                     <div className="w-24 h-1 bg-[#4A0E0E] mx-auto mb-8"></div>
                     <p className="text-xl md:text-2xl text-[#8E8E93] max-w-3xl mx-auto leading-relaxed">
                         Secure, scalable web applications with a focus on <span className="text-[#4A0E0E] font-semibold">security by design</span>.

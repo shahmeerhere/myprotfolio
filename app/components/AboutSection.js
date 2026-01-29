@@ -61,14 +61,14 @@ export default function AboutSection({ id }) {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h1 className="text-6xl sm:text-7xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#D1D1D1] to-[#4A0E0E]">
+                        <h2 className="text-6xl sm:text-7xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#D1D1D1] to-[#4A0E0E]">
                             About Me
-                        </h1>
+                        </h2>
                         <div className="w-20 border-b-4 border-[#4A0E0E]"></div>
                     </motion.header>
 
                     <motion.section
-                        className="w-full lg:w-2/3 grid grid-cols-1 gap-12 border-l border-gray-800 lg:pl-12"
+                        className="w-full lg:w-2/3 grid grid-cols-1 gap-12 border-l border-white lg:pl-12"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.9 }}
@@ -101,10 +101,16 @@ export default function AboutSection({ id }) {
                 </div>
             </div>
 
-            {/* ⚡ Design Philosophy / Engineering Strategy with Background */}
+            {/* ⚡ Engineering Strategy Section with Masked Background */}
             <div className="relative min-h-[700px] flex items-center justify-end mb-16 overflow-hidden">
-                {/* Background Image Container */}
-                <div className="absolute inset-0 z-0">
+                {/* Background Image Container with Alpha Mask */}
+                <div
+                    className="absolute inset-0 z-0"
+                    style={{
+                        maskImage: 'linear-gradient(to bottom left, black 30%, transparent 100%)',
+                        WebkitMaskImage: 'linear-gradient(to bottom left, black 30%, transparent 100%)'
+                    }}
+                >
                     <div
                         className="absolute inset-0 bg-cover bg-no-repeat opacity-100"
                         style={{
@@ -112,8 +118,8 @@ export default function AboutSection({ id }) {
                             backgroundPosition: 'left bottom'
                         }}
                     />
-                    {/* Gradient overlay - shifted to the right to support content */}
-                    <div className="absolute inset-0 bg-gradient-to-l from-black via-black/40 to-transparent" />
+                    {/* Content support gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-l from-[#0A0A0B]/80 via-[#0A0A0B]/40 to-transparent" />
                 </div>
 
                 <motion.section
@@ -123,9 +129,9 @@ export default function AboutSection({ id }) {
                     transition={{ duration: 1 }}
                     viewport={{ once: true }}
                 >
-                    <h1 className="text-5xl sm:text-6xl font-extrabold mb-4 text-white">
+                    <h2 className="text-5xl sm:text-6xl font-extrabold mb-4 text-white">
                         Engineering Strategy
-                    </h1>
+                    </h2>
                     <div className="w-24 border-b-4 border-[#4A0E0E] mb-12"></div>
 
                     <ul className="space-y-10">
@@ -154,9 +160,9 @@ export default function AboutSection({ id }) {
                     <p className="text-sm uppercase tracking-widest text-[#4A0E0E] mb-3 font-semibold">
                         Pillars of Practice
                     </p>
-                    <h1 className="text-5xl sm:text-6xl font-extrabold mb-4">
+                    <h2 className="text-5xl sm:text-6xl font-extrabold mb-4">
                         My Core Values
-                    </h1>
+                    </h2>
                     <div className="w-20 border-b-4 border-[#4A0E0E] mx-auto"></div>
                 </motion.header>
 

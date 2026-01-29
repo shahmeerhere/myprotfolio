@@ -63,7 +63,7 @@ export default function DevSecOpsSection({ id }) {
                         DevSecOps | Product Engineering
                     </motion.h2>
 
-                    <motion.h1
+                    <motion.h2
                         initial={{ opacity: 0, y: -40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.8 }}
@@ -77,7 +77,7 @@ export default function DevSecOpsSection({ id }) {
                         >
                             Secured by Design
                         </span>
-                    </motion.h1>
+                    </motion.h2>
 
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

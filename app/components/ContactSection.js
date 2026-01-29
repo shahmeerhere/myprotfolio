@@ -50,9 +50,9 @@ export default function ContactSection({ id }) {
                             transition={{ duration: 0.7 }}
                             viewport={{ once: true }}
                         >
-                            <h1 className="text-5xl sm:text-7xl font-extrabold mb-3 tracking-tight text-[#D1D1D1]">
+                            <h2 className="text-5xl sm:text-7xl font-extrabold mb-3 tracking-tight text-[#D1D1D1]">
                                 Contact Me
-                            </h1>
+                            </h2>
                             <div className="w-24 border-b-4 border-[#4A0E0E] mb-10"></div>
                         </motion.header>
 
@@ -174,13 +174,13 @@ export default function ContactSection({ id }) {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <h1 className="text-5xl sm:text-7xl font-extrabold mb-3 tracking-tight text-[#D1D1D1]">
+                        <h2 className="text-5xl sm:text-7xl font-extrabold mb-3 tracking-tight text-[#D1D1D1]">
                             Thank You
-                        </h1>
+                        </h2>
                         <div className="w-24 border-b-4 border-[#4A0E0E] mb-10"></div>
                         <p className="text-[#8E8E93] leading-relaxed mb-6">
                             I appreciate you taking the time to explore my work. If you’re seeking someone driven,
-                            creative, and deeply focused on cybersecurity and full-stack development — you’ve found the right person.
+                            creative, and deeply focused on cybersecurity and full-stack development you’ve found the right person.
                         </p>
                         <p className="text-[#8E8E93] leading-relaxed">
                             Let’s connect and build the future securely, one line of code at a time.
