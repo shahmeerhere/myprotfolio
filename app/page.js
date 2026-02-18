@@ -5,6 +5,7 @@ import DevSecOpsSection from "./components/DevSecOpsSection";
 import ProjectsSection from "./components/ProjectsSection";
 import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
+import CertificatesSection from "./components/CertificatesSection";
 import AnimatedBackground from "./components/AnimatedBackground";
 import ParticleEffect from "./components/ParticleEffect";
 
@@ -23,6 +24,7 @@ export default function Home() {
       <AnimatedBackground />
       <DevSecOpsSection id="devsecops" />
       <ProjectsSection id="project" />
+      <CertificatesSection id="certificates" />
       <AboutSection id="about" />
       <ContactSection id="contact" />
     </main>
