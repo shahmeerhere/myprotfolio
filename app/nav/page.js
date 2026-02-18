@@ -62,18 +62,33 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <ul className={`hidden md:flex items-center transition-all duration-500 ${scrolled ? "gap-6" : "gap-10"}`} role="list">
-            {navLinks.map((link) => (
-              <li key={link.name} role="listitem">
-                <Link
-                  href={link.href}
-                  className="text-sm font-medium hover:text-orange-800 transition-colors text-gray-300 tracking-wide font-outfit uppercase"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="hidden md:flex items-center gap-8 lg:gap-12">
+            <ul className={`flex items-center transition-all duration-500 ${scrolled ? "gap-6" : "gap-10"}`} role="list">
+              {navLinks.map((link) => (
+                <li key={link.name} role="listitem">
+                  <Link
+                    href={link.href}
+                    className="text-sm font-medium hover:text-orange-800 transition-colors text-gray-300 tracking-wide font-outfit uppercase"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <Link
+              href="/Shahmeer_Shahid_Platform_Engineer_CV.pdf"
+              target="_blank"
+            >
+              <motion.button
+                whileHover={{ scale: 1.05, y: -1 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-6 py-2.5 bg-gradient-to-r from-[#1A1A1C] to-[#4A0E0E] text-[#D1D1D1] font-bold text-xs uppercase tracking-widest rounded-full border border-white/10 shadow-[0_0_20px_rgba(74,14,14,0.2)] hover:shadow-[0_0_25px_rgba(74,14,14,0.4)] transition-all duration-300`}
+              >
+                Resume
+              </motion.button>
+            </Link>
+          </div>
 
           {/* Mobile Menu Button - Keeping simpler for now */}
           <button
@@ -114,6 +129,16 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+            <li className="pt-2">
+              <Link
+                href="/Shahmeer_Shahid_Platform_Engineer_CV.pdf"
+                target="_blank"
+                onClick={() => setMenuOpen(false)}
+                className="inline-block px-8 py-3 bg-gradient-to-r from-[#1A1A1C] to-[#4A0E0E] text-[#D1D1D1] font-bold text-xs uppercase tracking-widest rounded-full border border-white/10"
+              >
+                Resume
+              </Link>
+            </li>
           </ul>
         </motion.div>
       )}
